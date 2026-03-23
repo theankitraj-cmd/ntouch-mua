@@ -86,7 +86,7 @@ const jsonLd = {
       url: "https://ntouch-mua.vercel.app",
       telephone: "+918969184453",
       email: "nancymehta247@gmail.com",
-      image: "https://ntouch-mua.vercel.app/about-ceremony.jpg",
+      image: "https://ntouch-mua.vercel.app/nancy-mehta-makeup-artist-patna-bihar.jpg",
       priceRange: "₹₹-₹₹₹",
       address: {
         "@type": "PostalAddress",
@@ -236,7 +236,7 @@ const jsonLd = {
       description:
         "Lakme Academy certified makeup artist with 2 years of experience. Has worked at Miss Universe 2025 and The Cover Girl Event. Based in Patna, Bihar.",
       url: "https://ntouch-mua.vercel.app",
-      image: "https://ntouch-mua.vercel.app/about-ceremony.jpg",
+      image: "https://ntouch-mua.vercel.app/nancy-mehta-makeup-artist-patna-bihar.jpg",
       telephone: "+918969184453",
       email: "nancymehta247@gmail.com",
       address: {

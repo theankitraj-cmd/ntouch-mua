@@ -923,7 +923,7 @@ function About() {
             <div className="relative">
               <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-blush-100 relative shadow-xl">
                 <img 
-                  src="/about-ceremony.jpg" 
+                  src="/nancy-mehta-makeup-artist-patna-bihar.jpg"
                   alt="Nancy Mehta - Best Makeup Artist in Patna Bihar with Lakme Academy Certificate" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -1848,6 +1848,29 @@ function Booking() {
 function Footer() {
   return (
     <footer className="relative bg-blush-950 overflow-hidden">
+      {/* SEO: Crawlable 'Who is Nancy Mehta' article for Google featured snippets */}
+      <article className="sr-only" aria-hidden="false" itemScope itemType="https://schema.org/Person">
+        <h2 itemProp="name">Nancy Mehta — Professional Makeup Artist in Patna, Bihar</h2>
+        <p itemProp="description">
+          Nancy Mehta, known professionally as N.Touch MUA, is a Lakme Academy certified professional makeup artist based in Patna, Bihar, India. 
+          With over 2 years of expertise in the beauty industry, she specializes in bridal makeup, HD and airbrush makeup, party and reception glam, 
+          editorial and photoshoot makeup, skincare treatments, and traditional Indian styling including saree draping.
+        </p>
+        <p>
+          Nancy gained national recognition through her work supporting contestants at the Miss Universe 2025 pageant and The Cover Girl Event 2025, 
+          where she delivered camera-ready, flawless makeup and skincare under high-pressure environments. Her commitment to impeccable hygiene, 
+          time management, and strong client communication has earned her over 100 happy clients across Patna, Gaya, Muzaffarpur, Bhagalpur, 
+          Darbhanga, and other cities in Bihar and Jharkhand.
+        </p>
+        <p>
+          Nancy Mehta is widely regarded as one of the best makeup artists in Patna. She is known for creating natural, customized looks 
+          that enhance each client&apos;s unique beauty while ensuring long-lasting, flawless results. Whether it is a grand Indian wedding, 
+          an intimate engagement ceremony, or a high-fashion editorial shoot, Nancy brings her signature artistry and professionalism to every assignment.
+        </p>
+        <p>Contact: <span itemProp="telephone">+91 89691 84453</span> | Email: <span itemProp="email">nancymehta247@gmail.com</span></p>
+        <p>Location: <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress"><span itemProp="addressLocality">Patna</span>, <span itemProp="addressRegion">Bihar</span>, <span itemProp="addressCountry">India</span></span></p>
+        <img itemProp="image" src="/nancy-mehta-makeup-artist-patna-bihar.jpg" alt="Nancy Mehta Professional Makeup Artist Patna Bihar" width="600" height="800" />
+      </article>
       {/* Gradient top border */}
       <div className="h-px bg-gradient-to-r from-transparent via-blush-500 to-transparent" />
 
