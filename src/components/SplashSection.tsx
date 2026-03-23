@@ -1,51 +1,99 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export function SplashScreen({ onComplete }: { onComplete: () => void }) {
-  const [progress, setProgress] = useState(0);
+  const [currentWord, setCurrentWord] = useState(0);
+  const [exiting, setExiting] = useState(false);
+
+  const greetings = [
+    { text: "Hello", lang: "en" },
+    { text: "नमस्ते", lang: "hi" },
+    { text: "Bonjour", lang: "fr" },
+    { text: "Hola", lang: "es" },
+    { text: "مرحبا", lang: "ar" },
+    { text: "こんにちは", lang: "ja" },
+    { text: "Nancy Mehta", lang: "brand" },
+    { text: "Signature Look", lang: "reveal" },
+  ];
 
   useEffect(() => {
+    const wordDuration = 600;
+    const totalWords = greetings.length;
+
     const timer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
+      setCurrentWord((prev) => {
+        if (prev >= totalWords - 1) {
           clearInterval(timer);
-          setTimeout(onComplete, 500);
-          return 100;
+          setTimeout(() => {
+            setExiting(true);
+            setTimeout(onComplete, 1200);
+          }, 1000);
+          return prev;
         }
         return prev + 1;
       });
-    }, 20);
+    }, wordDuration);
+
     return () => clearInterval(timer);
-  }, [onComplete]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <motion.div
-      exit={{ opacity: 0, scale: 1.1 }}
-      transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-      className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black shadow-2xl"
+      animate={exiting ? { y: "-100%" } : { y: 0 }}
+      transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
     >
-      <div className="relative">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="font-display text-5xl md:text-7xl text-white mb-8 tracking-widest text-center"
-        >
-          NANCY <span className="italic text-blush-400">MEHTA</span>
-        </motion.h1>
-        
-        <div className="w-64 h-[1px] bg-white/10 relative overflow-hidden mx-auto">
-          <motion.div 
-            className="absolute top-0 left-0 h-full bg-gold-400"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
-        
-        <p className="font-body text-xs uppercase tracking-[0.4em] text-white/40 mt-6 text-center">
-          Loading Luxury Experience {progress}%
-        </p>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.img
+          src="/nancy-mehta-hero-bridal.jpg"
+          alt="Signature Look"
+          className="w-full h-full object-cover object-top"
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={currentWord === greetings.length - 1 ? { opacity: 0.4, scale: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8 }}
+        />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
+
+      <div className="absolute inset-0 grain-overlay pointer-events-none" />
+
+      <div className="relative z-10 w-full h-32 flex items-center justify-center text-center">
+        {greetings.map((greeting, i) => (
+          <motion.span
+            key={i}
+            className={`absolute whitespace-nowrap ${
+              greeting.lang === "brand"
+                ? "font-display text-4xl sm:text-6xl md:text-8xl font-light tracking-wide text-gold-400"
+                : greeting.lang === "reveal"
+                ? "font-display text-4xl sm:text-5xl md:text-7xl font-light tracking-[0.2em] uppercase text-white"
+                : "font-display text-4xl sm:text-6xl md:text-8xl font-light italic text-white/90"
+            }`}
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={
+              currentWord === i
+                ? { opacity: 1, scale: 1, y: 0 }
+                : currentWord > i
+                ? { opacity: 0, scale: 1.1, y: -20 }
+                : { opacity: 0, scale: 0.8, y: 20 }
+            }
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {greeting.text}
+          </motion.span>
+        ))}
+      </div>
+
+      <motion.p
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 font-body text-[10px] uppercase tracking-[0.6em] text-white/30 z-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: currentWord >= 2 ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Nancy Mehta — Makeup Artist
+      </motion.p>
     </motion.div>
   );
 }
