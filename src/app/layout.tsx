@@ -40,6 +40,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "N.Touch MUA",
+    images: [
+      {
+        url: "/og-nancy-mehta-ntouch-mua.png",
+        width: 1200,
+        height: 630,
+        alt: "N.Touch MUA - Nancy Mehta - Lakme Certified Makeup Artist Patna Bihar",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
