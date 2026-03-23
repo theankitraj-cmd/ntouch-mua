@@ -92,7 +92,7 @@ export function VibeMatcher() {
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-plum mb-6">Find Your <span className="italic text-blush-500">Vibe</span></h2>
           <p className="font-body text-base text-plum-soft max-w-xl mx-auto mb-16">Swipe right on what you love, left on what you don't. We'll curate the perfect look for you.</p>
         </ScrollReveal>
-        <div className="relative w-full max-w-sm mx-auto aspect-[3/4] flex items-center justify-center">
+        <div className="relative w-full max-w-[280px] sm:max-w-sm mx-auto aspect-[3/4] flex items-center justify-center">
           {finished ? (
             <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="absolute inset-0 bg-white rounded-3xl p-8 shadow-2xl flex flex-col items-center justify-center border border-blush-100">
               <Heart className="w-16 h-16 text-blush-500 mb-6" />
@@ -158,7 +158,7 @@ export function ShopNancysKit() {
             </p>
           </ScrollReveal>
         </div>
-        <div className="relative w-full aspect-[4/3] md:aspect-[21/9] rounded-[40px] overflow-hidden shadow-2xl border border-blush-200">
+        <div className="relative w-full aspect-[1/1] sm:aspect-[4/3] md:aspect-[21/9] rounded-[40px] overflow-hidden shadow-2xl border border-blush-200">
           <div className="absolute inset-0 bg-gradient-to-br from-blush-50 to-blush-200" />
           <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2000" alt="Vanity Desk" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50" />
           {kitItems.map((item) => (
@@ -238,7 +238,7 @@ export function HolographicCard() {
     <section className="py-24 bg-surface-elevated flex flex-col md:flex-row justify-center items-center px-6 gap-12" style={{ perspective: "1500px" }}>
       <div className="text-center md:text-left max-w-sm"><ScrollReveal><p className="font-body text-sm tracking-widest uppercase text-gold-500 mb-4">Connect</p><h2 className="font-display text-4xl lg:text-5xl font-light text-plum mb-4">Carry The <span className="italic text-blush-500">Magic</span> With You</h2><p className="font-body text-plum-soft">Save my digital card to instantly access my portfolio from anywhere.</p></ScrollReveal></div>
       <ScrollReveal delay={0.2}>
-        <motion.div onMouseMove={handleMouseMove} onMouseLeave={() => {x.set(0); y.set(0);}} style={{ rotateX, rotateY, transformStyle: "preserve-3d" }} className="relative w-[320px] h-[200px] md:w-[400px] md:h-[240px] rounded-2xl bg-gradient-to-br from-[#2E131E] to-[#12050B] shadow-2xl border border-white/10 overflow-hidden cursor-pointer group">
+        <motion.div onMouseMove={handleMouseMove} onMouseLeave={() => {x.set(0); y.set(0);}} style={{ rotateX, rotateY, transformStyle: "preserve-3d" }} className="relative w-full max-w-[320px] h-[180px] sm:h-[200px] md:max-w-[400px] md:h-[240px] rounded-2xl bg-gradient-to-br from-[#2E131E] to-[#12050B] shadow-2xl border border-white/10 overflow-hidden cursor-pointer group px-4">
           <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between" style={{ transform: "translateZ(30px)" }}>
             <div className="flex justify-between"><div><h3 className="font-display text-xl md:text-2xl text-white tracking-widest uppercase mb-1">Nancy Touch</h3><p className="font-body text-[10px] text-gold-400 tracking-widest uppercase">Master Makeup Artist</p></div><Sparkles className="w-5 h-5 text-white/50" /></div>
             <div className="flex justify-between items-end"><div><p className="font-body text-[10px] text-white/60 tracking-widest font-mono">+91 89691 84453</p><p className="font-body text-[10px] text-white/40 tracking-widest font-mono">IG: @NTOUCH.MUA</p></div><div className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-lg flex items-center justify-center border border-white/20"><span className="font-body text-xs text-white">N.T</span></div></div>

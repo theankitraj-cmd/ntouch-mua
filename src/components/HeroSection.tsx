@@ -263,22 +263,22 @@ export function Hero() {
   const floatingDepths = [0.8, 0.4, 0.6, 0.7, 0.3, 0.9, 0.5, 0.3, 0.6, 0.8, 0.2, 0.7, 0.4, 0.5, 0.6, 0.3];
 
   const floatingItems = [
-    { Component: MakeupLips, className: "w-22 md:w-32", style: { top: "8%", left: "4%", animationDelay: "0s", animationDuration: "7s" } },
-    { Component: MakeupBrush, className: "w-10 md:w-14", style: { top: "12%", right: "7%", animationDelay: "1.2s", animationDuration: "8s", transform: "rotate(-30deg)" } },
-    { Component: MakeupFoundation, className: "w-14 md:w-20", style: { top: "58%", left: "2%", animationDelay: "2.5s", animationDuration: "9s" } },
-    { Component: MakeupPerfume, className: "w-16 md:w-24", style: { bottom: "18%", right: "3%", animationDelay: "0.8s", animationDuration: "7.5s" } },
-    { Component: MakeupPalette, className: "w-22 md:w-32", style: { top: "4%", right: "18%", animationDelay: "1.5s", animationDuration: "8.5s" } },
-    { Component: MakeupMascara, className: "w-7 md:w-10", style: { top: "52%", right: "10%", animationDelay: "3s", animationDuration: "7s", transform: "rotate(15deg)" } },
-    { Component: MakeupLipstick, className: "w-10 md:w-14", style: { bottom: "22%", left: "8%", animationDelay: "0.5s", animationDuration: "8s", transform: "rotate(-15deg)" } },
-    { Component: MakeupEyelash, className: "w-18 md:w-28", style: { top: "10%", left: "20%", animationDelay: "2s", animationDuration: "9s" } },
-    { Component: MakeupMirror, className: "w-14 md:w-20", style: { bottom: "12%", right: "20%", animationDelay: "1s", animationDuration: "7.8s" } },
-    { Component: MakeupNailPolish, className: "w-9 md:w-12", style: { top: "38%", left: "5%", animationDelay: "3.5s", animationDuration: "8.2s", transform: "rotate(10deg)" } },
-    { Component: FloatingHearts, className: "w-16 md:w-22", style: { top: "18%", left: "13%", animationDelay: "0.3s", animationDuration: "6s" } },
-    { Component: MakeupBrush, className: "w-8 md:w-12", style: { bottom: "28%", left: "18%", animationDelay: "2.8s", animationDuration: "7.5s", transform: "rotate(45deg)" } },
-    { Component: FloatingHearts, className: "w-12 md:w-16", style: { top: "32%", right: "5%", animationDelay: "1.8s", animationDuration: "6.5s" } },
-    { Component: MakeupLipstick, className: "w-8 md:w-12", style: { top: "4%", left: "40%", animationDelay: "4s", animationDuration: "8s", transform: "rotate(25deg)" } },
-    { Component: MakeupPerfume, className: "w-10 md:w-14", style: { bottom: "8%", left: "35%", animationDelay: "1.2s", animationDuration: "7s" } },
-    { Component: MakeupFoundation, className: "w-10 md:w-14", style: { top: "42%", right: "18%", animationDelay: "2.2s", animationDuration: "8.8s" } },
+    { Component: MakeupLips, className: "w-20 md:w-32", style: { top: "8%", left: "4%", animationDelay: "0s", animationDuration: "7s" } },
+    { Component: MakeupBrush, className: "w-8 md:w-14 hidden md:block", style: { top: "12%", right: "7%", animationDelay: "1.2s", animationDuration: "8s", transform: "rotate(-30deg)" } },
+    { Component: MakeupFoundation, className: "w-12 md:w-20 hidden md:block", style: { top: "58%", left: "2%", animationDelay: "2.5s", animationDuration: "9s" } },
+    { Component: MakeupPerfume, className: "w-14 md:w-24", style: { bottom: "18%", right: "3%", animationDelay: "0.8s", animationDuration: "7.5s" } },
+    { Component: MakeupPalette, className: "w-20 md:w-32 hidden md:block", style: { top: "4%", right: "18%", animationDelay: "1.5s", animationDuration: "8.5s" } },
+    { Component: MakeupMascara, className: "w-6 md:w-10", style: { top: "52%", right: "10%", animationDelay: "3s", animationDuration: "7s", transform: "rotate(15deg)" } },
+    { Component: MakeupLipstick, className: "w-8 md:w-14", style: { bottom: "22%", left: "8%", animationDelay: "0.5s", animationDuration: "8s", transform: "rotate(-15deg)" } },
+    { Component: MakeupEyelash, className: "w-15 md:w-28 hidden md:block", style: { top: "10%", left: "20%", animationDelay: "2s", animationDuration: "9s" } },
+    { Component: MakeupMirror, className: "w-12 md:w-20 hidden md:block", style: { bottom: "12%", right: "20%", animationDelay: "1s", animationDuration: "7.8s" } },
+    { Component: MakeupNailPolish, className: "w-8 md:w-12", style: { top: "38%", left: "5%", animationDelay: "3.5s", animationDuration: "8.2s", transform: "rotate(10deg)" } },
+    { Component: FloatingHearts, className: "w-14 md:w-22", style: { top: "18%", left: "13%", animationDelay: "0.3s", animationDuration: "6s" } },
+    { Component: MakeupBrush, className: "w-7 md:w-12 hidden md:block", style: { bottom: "28%", left: "18%", animationDelay: "2.8s", animationDuration: "7.5s", transform: "rotate(45deg)" } },
+    { Component: FloatingHearts, className: "w-10 md:w-16 hidden md:block", style: { top: "32%", right: "5%", animationDelay: "1.8s", animationDuration: "6.5s" } },
+    { Component: MakeupLipstick, className: "w-7 md:w-12 hidden md:block", style: { top: "4%", left: "40%", animationDelay: "4s", animationDuration: "8s", transform: "rotate(25deg)" } },
+    { Component: MakeupPerfume, className: "w-8 md:w-14 hidden md:block", style: { bottom: "8%", left: "35%", animationDelay: "1.2s", animationDuration: "7s" } },
+    { Component: MakeupFoundation, className: "w-8 md:w-14 hidden md:block", style: { top: "42%", right: "18%", animationDelay: "2.2s", animationDuration: "8.8s" } },
   ];
 
   return (
@@ -449,7 +449,7 @@ export function Hero() {
               filter: "blur(30px)",
             }}
           />
-          <h1 className="relative font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white leading-[0.95] mb-4 hero-name-shimmer">
+          <h1 className="relative font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white leading-[0.95] mb-4 hero-name-shimmer">
             {letters.map((letter, i) => (
               <motion.span
                 key={i}

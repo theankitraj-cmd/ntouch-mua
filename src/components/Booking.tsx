@@ -129,7 +129,7 @@ export function Booking() {
                  {step === 0 && (
                    <motion.div key="step0" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, y: -50 }} className="text-center w-full">
                      <div className="w-20 h-[1px] bg-gold-400 mx-auto mb-8" />
-                     <h3 className="font-display text-5xl md:text-7xl text-plum mb-6 tracking-tight">Your <span className="italic text-blush-500">Elite</span> Journey</h3>
+                     <h3 className="font-display text-4xl sm:text-5xl md:text-7xl text-plum mb-6 tracking-tight">Your <span className="italic text-blush-500">Elite</span> Journey</h3>
                      <p className="font-body text-xl text-plum-soft mb-12 max-w-md mx-auto leading-relaxed">Let's craft your signature transformation. We'll start with a few brief details.</p>
                      <button onClick={nextStep} className="group relative px-12 py-5 bg-black text-white rounded-full font-display text-2xl tracking-wide overflow-hidden transition-all hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
                        <span className="relative z-10 flex items-center gap-3">Begin Experience <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" /></span>
@@ -142,7 +142,7 @@ export function Booking() {
                  {step === 1 && (
                    <motion.div key="step1" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, y: -50 }} className="w-full">
                      <p className="font-body text-xs tracking-[0.4em] uppercase text-gold-500 mb-6">01 — Identity</p>
-                     <h3 className="font-display text-4xl md:text-6xl text-plum mb-10 leading-none">Who shall I have the pleasure of <span className="italic text-blush-500">transforming</span>?</h3>
+                     <h3 className="font-display text-3xl sm:text-4xl md:text-6xl text-plum mb-10 leading-none">Who shall I have the pleasure of <span className="italic text-blush-500">transforming</span>?</h3>
                      <input 
                        autoFocus
                        type="text" 
@@ -188,13 +188,13 @@ export function Booking() {
                  {step === 3 && (
                    <motion.div key="step3" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, y: -50 }} className="w-full">
                      <p className="font-body text-xs tracking-[0.4em] uppercase text-gold-500 mb-6">03 — Timeline</p>
-                     <h3 className="font-display text-4xl md:text-6xl text-plum mb-10 leading-none">Which <span className="italic text-blush-500">Golden Date</span> are we celebrating?</h3>
+                     <h3 className="font-display text-3xl sm:text-4xl md:text-6xl text-plum mb-10 leading-none">Which <span className="italic text-blush-500">Golden Date</span> are we celebrating?</h3>
                      <input 
                        autoFocus
                        type="date" 
                        value={formState.date}
                        onChange={(e) => { setFormState({...formState, date: e.target.value}); }}
-                       className="w-full text-3xl md:text-5xl font-light text-plum bg-transparent border-b border-plum/10 focus:border-gold-400 outline-none pb-6 transition-colors"
+                       className="w-full text-2xl sm:text-3xl md:text-5xl font-light text-plum bg-transparent border-b border-plum/10 focus:border-gold-400 outline-none pb-6 transition-colors"
                      />
                      <div className="mt-12 flex items-center gap-6">
                        <button onClick={nextStep} disabled={!formState.date} className="px-10 py-4 bg-plum text-white rounded-full disabled:opacity-20 flex items-center gap-3 hover:bg-black transition-all shadow-xl active:scale-95">
@@ -208,7 +208,7 @@ export function Booking() {
                  {step === 4 && (
                    <motion.div key="step4" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, y: -50 }} className="w-full">
                      <p className="font-body text-xs tracking-[0.4em] uppercase text-gold-500 mb-6">04 — Selection</p>
-                     <h3 className="font-display text-4xl md:text-6xl text-plum mb-10 leading-none">Select your <span className="italic text-blush-500">Service</span></h3>
+                     <h3 className="font-display text-3xl sm:text-4xl md:text-6xl text-plum mb-10 leading-none">Select your <span className="italic text-blush-500">Service</span></h3>
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                        {["Bridal Makeup", "Party / Reception", "Engagement", "Editorial / Fashion"].map((type) => (
                          <button 
@@ -228,7 +228,7 @@ export function Booking() {
                  {step === 5 && (
                    <motion.div key="step5" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, y: -50 }} className="w-full">
                      <p className="font-body text-xs tracking-[0.4em] uppercase text-gold-500 mb-6">05 — Reach</p>
-                     <h3 className="font-display text-4xl md:text-6xl text-plum mb-10 leading-none">Your <span className="italic text-blush-500">Phone Number</span> for direct contact?</h3>
+                     <h3 className="font-display text-3xl sm:text-4xl md:text-6xl text-plum mb-10 leading-none">Your <span className="italic text-blush-500">Phone Number</span>?</h3>
                      <input 
                        autoFocus
                        type="tel" 

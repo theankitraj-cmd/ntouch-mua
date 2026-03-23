@@ -74,7 +74,7 @@ export function LookBreakdown() {
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 style={{ left: `${f.x}%`, top: `${f.y}%` }}
-                className="absolute z-20"
+                className="absolute z-20 hidden sm:block"
               >
                 <div className="relative flex flex-col items-center">
                    <div className="w-2 h-2 rounded-full bg-blush-400 shadow-[0_0_15px_#D4456B]" />

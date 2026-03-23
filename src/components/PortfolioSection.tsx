@@ -103,7 +103,7 @@ export function Portfolio() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[200px] md:auto-rows-[250px]">
           {filtered.map((work, i) => (
             <ScrollReveal 
               key={work.id} 
