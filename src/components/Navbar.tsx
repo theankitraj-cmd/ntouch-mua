@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Menu, X, Instagram, Star, Sparkles, Award, Heart, Calendar, ChevronRight } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Calendar, ChevronRight, Star, Sparkles, Award, Heart, Instagram } from "lucide-react";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -11,7 +11,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -22,13 +22,12 @@ export function Navbar() {
     { label: "Reviews", href: "#testimonials" },
   ];
 
-  // The island expands if we hover, open the mobile menu, OR if we haven't scrolled down yet.
   const isExpanded = hovered || mobileMenuOpen || !scrolled;
   const springConfig = { type: "spring" as const, stiffness: 400, damping: 30, mass: 0.8 };
 
   return (
     <>
-      <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+      <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none section-optimize">
         <motion.nav
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
@@ -43,9 +42,8 @@ export function Navbar() {
             borderRadius: isExpanded ? "32px" : "20px"
           }}
           transition={springConfig}
-          className="pointer-events-auto flex items-center justify-between px-5 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] relative overflow-hidden text-nowrap"
+          className="pointer-events-auto flex items-center justify-between px-5 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] relative overflow-hidden text-nowrap perf-gpu"
         >
-          {/* Logo */}
           <motion.div 
             layout="position"
             transition={springConfig}
@@ -53,12 +51,9 @@ export function Navbar() {
             animate={{ flex: isExpanded ? 0 : 1, justifyContent: isExpanded ? "flex-start" : "center" }}
             style={{ width: isExpanded ? "auto" : "100%" }}
           >
-            <a href="#" className="font-display text-xl md:text-2xl font-semibold tracking-wide text-white">
-              N.Touch
-            </a>
+            <a href="#" className="font-display text-xl md:text-2xl font-semibold tracking-wide text-white">N.Touch</a>
           </motion.div>
 
-          {/* Desktop Links Container */}
           <motion.div 
             className="hidden md:flex items-center gap-6 absolute right-5 z-10"
             animate={{ opacity: isExpanded ? 1 : 0, filter: isExpanded ? "blur(0px)" : "blur(4px)" }}
@@ -66,29 +61,18 @@ export function Navbar() {
             style={{ pointerEvents: isExpanded ? "auto" : "none" }}
           >
             {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="font-body text-xs font-medium tracking-[0.1em] uppercase text-white/70 hover:text-white transition-colors duration-200"
-              >
-                {link.label}
-              </a>
+              <a key={link.label} href={link.href} className="font-body text-xs font-medium tracking-[0.1em] uppercase text-white/70 hover:text-white transition-colors duration-200">{link.label}</a>
             ))}
-            <a
-              href="#booking"
-              className="ml-2 px-5 py-2.5 rounded-full bg-white text-black text-xs font-semibold tracking-wide transition-transform hover:scale-105 shadow-md flex items-center gap-2"
-            >
-              <Calendar className="w-3.5 h-3.5" />
-              Book
+            <a href="#booking" className="ml-2 px-5 py-2.5 rounded-full bg-white text-black text-xs font-semibold tracking-wide transition-transform hover:scale-105 shadow-md flex items-center gap-2">
+              <Calendar className="w-3.5 h-3.5" /> Book
             </a>
           </motion.div>
 
-          {/* Mobile hamburger */}
           <motion.button
             animate={{ opacity: isExpanded ? 1 : 0, filter: isExpanded ? "blur(0px)" : "blur(4px)" }}
             transition={{ duration: 0.2 }}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-1 text-white absolute right-5 z-20"
+            className="md:hidden p-1 text-white absolute right-5 z-20 cursor-pointer"
             style={{ pointerEvents: isExpanded ? "auto" : "none" }}
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -96,12 +80,11 @@ export function Navbar() {
         </motion.nav>
       </div>
 
-      {/* iOS Control Center Style Mobile Menu */}
       <motion.div
         initial={false}
         animate={mobileMenuOpen ? { opacity: 1, backdropFilter: "blur(40px)" } : { opacity: 0, backdropFilter: "blur(0px)" }}
         transition={{ duration: 0.4 }}
-        className="fixed inset-0 z-40 bg-black/40 flex flex-col justify-center px-6 md:hidden"
+        className="fixed inset-0 z-40 bg-black/40 flex flex-col justify-center px-6 md:hidden perf-gpu"
         style={{ pointerEvents: mobileMenuOpen ? "auto" : "none" }}
       >
         <div className="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto mt-16">
@@ -121,7 +104,6 @@ export function Navbar() {
               <span className="font-body text-sm tracking-widest uppercase text-white font-medium">{link.label}</span>
             </motion.a>
           ))}
-          
           <motion.a
             href="#booking"
             onClick={() => setMobileMenuOpen(false)}
@@ -138,21 +120,6 @@ export function Navbar() {
               <ChevronRight className="w-5 h-5 text-white" />
             </div>
           </motion.a>
-
-          {/* Dummy controls */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            animate={mobileMenuOpen ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 20 }}
-            transition={{ delay: 0.3, type: "spring", stiffness: 300, damping: 25 }}
-            className="col-span-2 h-16 bg-white/10 border border-white/20 rounded-2xl flex items-center px-6 gap-4"
-          >
-            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-              <Instagram className="w-4 h-4 text-white" />
-            </div>
-            <div className="w-full h-1.5 bg-white/20 rounded-full overflow-hidden flex">
-               <div className="w-3/4 h-full bg-white rounded-full" />
-            </div>
-          </motion.div>
         </div>
       </motion.div>
     </>
