@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue } from "framer-motion";
 import { GooeyText } from "@/components/ui/gooey-text-morphing";
@@ -709,7 +711,7 @@ function Hero() {
               filter: "blur(30px)",
             }}
           />
-          <h1 className="relative font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white leading-[0.95] mb-4 hero-name-shimmer" title="Best Bridal Makeup Artist in Patna - Nancy Mehta">
+          <h1 className="relative font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white leading-[0.95] mb-4 hero-name-shimmer" title="Nancy Mehta — The Best Bridal Makeup Artist in Patna & Bihar">
             {letters.map((letter, i) => (
               <motion.span
                 key={i}
@@ -838,7 +840,14 @@ function Hero() {
           <ChevronDown className="w-5 h-5 text-white/50" />
         </motion.div>
       </motion.div>
-    </section>
+    
+        <div className="sr-only">
+          <h3>Common Questions for Beauty Services in Patna</h3>
+          <p><strong>Is Nancy Mehta the best makeup artist in Patna?</strong> Yes, Nancy Mehta is highly rated and Lakme certified.</p>
+          <p><strong>What is the bridal makeup cost in Bihar?</strong> Pricing depends on HD or Airbrush requirements. Contact Nancy at nouchmua.com.</p>
+        </div>
+
+      </section>
   );
 }
 
@@ -1667,7 +1676,7 @@ function Booking() {
 
       {/* Decorative photo */}
       <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-60 h-80 rounded-3xl overflow-hidden opacity-20 hidden md:block pointer-events-none">
-        <img src="/nancy-mehta-hero-bridal.jpg" alt="Bridal Look by N.Touch MUA" className="w-full h-full object-cover" />
+        <Image src="/nancy-mehta-hero-bridal.jpg" alt="Best Bridal Makeup Artist in Patna - Nancy Mehta Transformation" width={1000} height={1500} className="w-full h-full object-cover" priority />
       </div>
 
       <div className="max-w-4xl mx-auto px-6 text-center">
@@ -1929,7 +1938,7 @@ function Footer() {
         </p>
         <p>Contact: <span itemProp="telephone">+91 89691 84453</span> | Email: <span itemProp="email">nancymehta247@gmail.com</span></p>
         <p>Location: <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress"><span itemProp="addressLocality">Patna</span>, <span itemProp="addressRegion">Bihar</span>, <span itemProp="addressCountry">India</span></span></p>
-        <img itemProp="image" src="/nancy-mehta-makeup-artist-patna-bihar.jpg" alt="Nancy Mehta Professional Makeup Artist Patna Bihar" width="600" height="800" />
+        <Image itemProp="image" src="/nancy-mehta-makeup-artist-patna-bihar.jpg" alt="Nancy Mehta Lakme Academy Certified Makeup Artist in Patna Bihar" width={600} height={800} className="object-cover" />
       </article>
       {/* Gradient top border */}
       <div className="h-px bg-gradient-to-r from-transparent via-blush-500 to-transparent" />
@@ -2036,6 +2045,7 @@ function Footer() {
       {/* Local SEO Keywords Block */}
       <section className="sr-only">
         <h2>Best Bridal Makeup Artist in Patna - Nancy Mehta MUA</h2>
+        <p>Expert <strong>Makeup Artist in Patna</strong> specializing in <strong>Bridal Makeup Patna</strong> and luxury transformations across Bihar.</p>
         <p>Nancy Mehta is a <strong>Lakme Academy certified professional</strong> specializing in <strong>bridal makeup in Patna, Bihar</strong>. 
         Offering HD makeup, airbrush makeup, and engagement party looks. Top-rated makeup artist for weddings in Patna.</p>
         <ul>
