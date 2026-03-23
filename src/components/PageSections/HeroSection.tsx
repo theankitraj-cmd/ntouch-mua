@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Star, Calendar, ArrowRight, Award, Heart } from "lucide-react";
 
 /* ═══════════════════════════════════════════════════════
    FLOATING MAKEUP SVG ILLUSTRATIONS
@@ -339,7 +339,7 @@ export function HeroSection() {
       {floatingItems.map((item, i) => (
         <div
           key={i}
-          ref={(el) => (floatingRefs.current[i] = el)}
+          ref={(el) => { floatingRefs.current[i] = el; }}
           className="absolute z-[5] pointer-events-none perf-gpu"
           style={{ ...item.style, animation: `float ${item.style.animationDuration} ${item.style.animationDelay} ease-in-out infinite` }}
         >

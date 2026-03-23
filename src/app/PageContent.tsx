@@ -2,7 +2,7 @@
 
 import React from "react";
 import { SplashScreen } from "@/components/SplashSection";
-import { Navbar } from "@/components/NavBar";
+import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/PageSections/HeroSection";
 import { TrustSection, SocialProofMarquee } from "@/components/PageSections/TrustSection";
 import { AboutSection } from "@/components/PageSections/AboutSection";
@@ -16,7 +16,7 @@ import { FooterSection } from "@/components/PageSections/FooterSection";
 export default function PageContent() {
   return (
     <main className="bg-surface smooth-scroll-container h-screen overflow-y-auto overflow-x-hidden">
-      <SplashScreen />
+      <SplashScreen onComplete={() => {}} />
       <Navbar />
       
       {/* ── 120 FPS PERFORMANCE SECTIONS ── */}
