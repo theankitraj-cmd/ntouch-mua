@@ -1455,7 +1455,18 @@ function Testimonials() {
     <section id="testimonials" className="relative py-section bg-blush-950 overflow-hidden">
       <GoldParticles />
 
-      <div className="max-w-5xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-5xl mx-auto px-6 md:px-8 relative z-10 flex flex-col md:flex-row items-center gap-10">
+        {/* Sister's Photo */}
+        <ScrollReveal className="hidden md:block flex-shrink-0">
+          <div className="w-48 h-64 rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl">
+            <img
+              src="/nancy-mehta-hero-bridal.jpg"
+              alt="Bridal Makeup Look by N.Touch MUA Patna"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+        </ScrollReveal>
+        <div className="flex-1">
         <div className="text-center mb-16">
           <ScrollReveal>
             <p className="font-body text-sm tracking-[0.2em] uppercase text-gold-400 mb-4">
@@ -1532,6 +1543,7 @@ function Testimonials() {
               aria-label={`Go to review ${i + 1}`}
             />
           ))}
+        </div>
         </div>
       </div>
     </section>
@@ -1648,6 +1660,11 @@ function Booking() {
   return (
     <section id="booking" className="relative py-20 md:py-28 bg-surface overflow-hidden">
       <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-blush-200/30 rounded-full blur-[120px] pointer-events-none" />
+
+      {/* Decorative photo */}
+      <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-60 h-80 rounded-3xl overflow-hidden opacity-20 hidden lg:block pointer-events-none">
+        <img src="/nancy-mehta-hero-bridal.jpg" alt="Bridal Look by N.Touch MUA" className="w-full h-full object-cover" />
+      </div>
 
       <div className="max-w-4xl mx-auto px-6 text-center">
         <ScrollReveal>
@@ -1917,9 +1934,14 @@ function Footer() {
         <div className="grid md:grid-cols-3 gap-12 items-start">
           {/* Brand */}
           <div>
-            <h3 className="font-display text-3xl text-white font-light mb-3">
-              N.Touch
-            </h3>
+            <div className="flex items-center gap-4 mb-3">
+              <div className="w-12 h-12 rounded-full overflow-hidden border border-white/20">
+                <img src="/nancy-mehta-hero-bridal.jpg" alt="N.Touch MUA" className="w-full h-full object-cover object-top" />
+              </div>
+              <h3 className="font-display text-3xl text-white font-light">
+                N.Touch
+              </h3>
+            </div>
             <p className="font-body text-sm text-white/50 leading-relaxed max-w-xs">
               Luxury makeup artistry by Nancy Mehta. Lakme Academy certified.
               Transforming faces, elevating confidence.
