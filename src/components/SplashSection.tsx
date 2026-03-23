@@ -42,7 +42,7 @@ export function SplashScreen({ onComplete }: { onComplete: () => void }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black shadow-2xl"
+      className="fixed inset-0 z-[100] flex items-center justify-center hero-gradient shadow-2xl"
       animate={exiting ? { y: "-100%" } : { y: 0 }}
       transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
     >
@@ -55,7 +55,7 @@ export function SplashScreen({ onComplete }: { onComplete: () => void }) {
           animate={currentWord === greetings.length - 1 ? { opacity: 0.4, scale: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8 }}
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/20" />
       </div>
 
       <div className="absolute inset-0 grain-overlay pointer-events-none" />
@@ -66,10 +66,10 @@ export function SplashScreen({ onComplete }: { onComplete: () => void }) {
             key={i}
             className={`absolute whitespace-nowrap ${
               greeting.lang === "brand"
-                ? "font-display text-4xl sm:text-6xl md:text-8xl font-light tracking-wide text-gold-400"
+                ? "font-display text-4xl sm:text-6xl md:text-8xl font-light tracking-wide text-white drop-shadow-lg"
                 : greeting.lang === "reveal"
-                ? "font-display text-4xl sm:text-5xl md:text-7xl font-light tracking-[0.2em] uppercase text-white"
-                : "font-display text-4xl sm:text-6xl md:text-8xl font-light italic text-white/90"
+                ? "font-display text-4xl sm:text-5xl md:text-7xl font-light tracking-[0.2em] uppercase text-white drop-shadow-lg"
+                : "font-display text-4xl sm:text-6xl md:text-8xl font-light italic text-white/90 drop-shadow-md"
             }`}
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={
@@ -87,7 +87,7 @@ export function SplashScreen({ onComplete }: { onComplete: () => void }) {
       </div>
 
       <motion.p
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 font-body text-[10px] uppercase tracking-[0.6em] text-white/30 z-20"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 font-body text-[10px] uppercase tracking-[0.6em] text-white/60 z-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: currentWord >= 2 ? 1 : 0 }}
         transition={{ duration: 0.5 }}
