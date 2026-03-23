@@ -1889,7 +1889,10 @@ function Booking() {
 
                               // Send Email
                               try {
+                                console.log("SUBMITTING_BOOKING:", formState);
                                 const res = await sendBookingEmails(formState);
+                                console.log("SERVER_RESPONSE:", res);
+                                
                                 if (res.success) {
                                   setSubmitted(true);
                                   setTimeout(() => nextStep(), 1500);
