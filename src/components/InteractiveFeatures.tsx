@@ -9,19 +9,19 @@ import { swipeCards, kitItems, editorialLooks, brideLooks, titleLooks } from "@/
 export function MobileBookingBar() {
   return (
     <motion.div 
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[90] w-[calc(100%-2rem)] max-w-sm md:hidden"
+      className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[90] w-auto max-w-sm"
       initial={{ y: 150, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 2, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ delay: 2.3, duration: 1, ease: [0.22, 1, 0.36, 1] }}
     >
       <a 
         href="https://wa.me/918969184453?text=Hi%20Nancy!%20I%20want%20to%20book%20a%20makeup%20session."
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center gap-3 w-full bg-black/60 backdrop-blur-xl border border-white/20 p-4 rounded-full shadow-[0_8px_32px_rgba(212,69,107,0.4)] hover:bg-black/80 transition-all active:scale-95"
+        className="flex items-center justify-center gap-3 w-full bg-green-500/20 backdrop-blur-xl border border-green-500/30 px-6 py-4 rounded-full shadow-[0_8px_32px_rgba(22,163,74,0.4)] hover:bg-green-500/30 transition-all active:scale-95 group"
       >
-        <MessageCircle className="w-5 h-5 text-green-400 drop-shadow-lg" />
-        <span className="font-body text-sm font-medium tracking-wide text-white">Book Your Look on WhatsApp</span>
+        <MessageCircle className="w-5 h-5 text-green-400 drop-shadow-lg group-hover:scale-110 transition-transform" />
+        <span className="font-body text-sm font-medium tracking-wide text-white">Contact on WhatsApp</span>
       </a>
     </motion.div>
   );

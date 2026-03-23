@@ -1971,11 +1971,11 @@ function Footer() {
               Quick Links
             </p>
             <div className="space-y-3">
-              {["About", "Portfolio", "Services", "Testimonials", "Book Now"].map(
+              {["About", "Portfolio", "Services", "Insights", "Testimonials", "Book Now"].map(
                 (link) => (
                   <a
                     key={link}
-                    href={`#${link.toLowerCase().replace(" ", "")}`}
+                    href={link === "Insights" ? "/blog" : `#${link.toLowerCase().replace(" ", "")}`}
                     className="block font-body text-sm text-white/60 hover:text-white transition-colors duration-200 cursor-pointer"
                   >
                     {link}
