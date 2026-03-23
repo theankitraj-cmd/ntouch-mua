@@ -9,6 +9,7 @@ import {
   Menu,
   X,
   Instagram,
+  Facebook,
   Phone,
   MapPin,
   Mail,
@@ -1592,7 +1593,7 @@ function Booking() {
                        onChange={(e) => setFormState({...formState, phone: e.target.value})}
                        onKeyDown={(e) => e.key === "Enter" && formState.phone.length >= 10 && nextStep()}
                        className="w-full text-3xl md:text-5xl font-light text-plum bg-transparent border-b-2 border-blush-300 focus:border-blush-500 outline-none pb-4 placeholder:text-plum/20"
-                       placeholder="+91 98765 43210"
+                       placeholder="+91 89691 84453"
                      />
                      <div className="mt-8 flex items-center gap-4">
                        <button onClick={nextStep} disabled={formState.phone.length < 10} className="px-8 py-3 bg-plum text-white rounded-full disabled:opacity-50 cursor-pointer flex items-center gap-2 hover:bg-black transition-colors">
@@ -1751,10 +1752,27 @@ function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-blush-400" />
-                <span className="font-body text-sm text-white/60">
-                  +91 98765 43210
-                </span>
+                <a href="tel:+918969184453" className="font-body text-sm text-white/60 hover:text-white transition-colors">
+                  +91 89691 84453
+                </a>
               </div>
+              <div className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-blush-400" />
+                <a href="mailto:nancymehta247@gmail.com" className="font-body text-sm text-white/60 hover:text-white transition-colors">
+                  nancymehta247@gmail.com
+                </a>
+              </div>
+              <a
+                href="https://facebook.com/ntouchmua"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 cursor-pointer group"
+              >
+                <Facebook className="w-4 h-4 text-blush-400" />
+                <span className="font-body text-sm text-white/60 group-hover:text-white transition-colors">
+                  /ntouchmua
+                </span>
+              </a>
               <a
                 href="https://instagram.com/n.touchmua"
                 target="_blank"
@@ -2072,7 +2090,7 @@ function MobileBookingBar() {
       transition={{ delay: 2, duration: 1, ease: [0.22, 1, 0.36, 1] }}
     >
       <a 
-        href="https://wa.me/919876543210?text=Hi%20Nancy!%20I%20want%20to%20book%20a%20makeup%20session."
+        href="https://wa.me/918969184453?text=Hi%20Nancy!%20I%20want%20to%20book%20a%20makeup%20session."
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center gap-3 w-full bg-black/60 backdrop-blur-xl border border-white/20 p-4 rounded-full shadow-[0_8px_32px_rgba(212,69,107,0.4)] hover:bg-black/80 transition-all active:scale-95"
