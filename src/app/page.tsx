@@ -2472,7 +2472,7 @@ function HolographicCard() {
              <div className="flex justify-between items-end mt-4">
                <div>
                  <p className="font-body text-[10px] md:text-xs text-white/60 tracking-widest font-mono mb-1">
-                   +91 98765 43210
+                   +91 89691 84453
                  </p>
                  <p className="font-body text-[10px] md:text-xs text-white/40 tracking-widest font-mono">
                    IG: @NTOUCH.MUA
