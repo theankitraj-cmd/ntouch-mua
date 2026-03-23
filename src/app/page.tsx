@@ -942,6 +942,22 @@ function About() {
                 ))}
               </div>
             </ScrollReveal>
+
+            {/* Work Ethic & Personal Skills */}
+            <ScrollReveal delay={0.5}>
+              <div className="mt-8 border-t border-blush-200/50 pt-8">
+                <p className="font-body text-sm tracking-[0.2em] uppercase text-gold-500 mb-4">
+                  Ethic & Approach
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["Impeccable Hygiene", "Time Management", "Client Communication", "Attention to Detail", "Adaptability"].map((skill, i) => (
+                    <span key={i} className="px-3 py-1.5 rounded-full border border-blush-200 bg-surface text-xs font-body tracking-wider text-plum uppercase hover:bg-blush-100 transition-colors cursor-default">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>
@@ -1317,27 +1333,21 @@ function Testimonials() {
 
   const reviews = [
     {
-      name: "Priya Sharma",
-      event: "Bride",
-      text: "Nancy transformed me into the most beautiful version of myself. My bridal look was absolutely flawless — every guest kept complimenting. She truly understands what makes a bride glow.",
+      name: "Shristi",
+      event: "Party / Bachelorette",
+      text: "Nancy made all my wildest dreams come true! I never felt confident rocking bold and dramatic styles, but she created an absolute masterpiece for my bachelorette party. I felt unstoppable and my pictures look like they belong in a magazine. Best day ever!",
       rating: 5,
     },
     {
-      name: "Anita Kumari",
+      name: "Ankita",
+      event: "Editorial Glam",
+      text: "Nancy has impeccable taste and insane vision, but her real superpower is how genuinely she listens to what her clients feel comfortable in. She elevated my features flawlessly without making me look like a different person. Pure artistry and pure magic!",
+      rating: 5,
+    },
+    {
+      name: "Kalash",
       event: "Reception",
-      text: "The attention to detail was incredible. My makeup lasted through the entire reception without a single touchup. Nancy is not just an artist, she is a magician with her brushes.",
-      rating: 5,
-    },
-    {
-      name: "Ritu Singh",
-      event: "Engagement",
-      text: "I was nervous about my engagement look, but Nancy made me feel so comfortable. The result was beyond my expectations — elegant, sophisticated, and perfectly me.",
-      rating: 5,
-    },
-    {
-      name: "Kavita Devi",
-      event: "Wedding",
-      text: "Best investment for my wedding! Nancy understood exactly what I wanted and delivered a look that was both traditional and modern. Highly recommend to every bride-to-be!",
+      text: "As someone who usually doesn't wear much makeup, I never really felt comfortable dressing up until I met Nancy. She gave me a signature glow that felt completely 'me', but elevated to absolute perfection. I have never felt so beautiful and confident in my entire life!",
       rating: 5,
     },
   ];
