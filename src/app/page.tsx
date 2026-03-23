@@ -1457,8 +1457,8 @@ function Testimonials() {
 
       <div className="max-w-5xl mx-auto px-6 md:px-8 relative z-10 flex flex-col md:flex-row items-center gap-10">
         {/* Sister's Photo */}
-        <ScrollReveal className="hidden md:block flex-shrink-0">
-          <div className="w-48 h-64 rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl">
+        <ScrollReveal className="flex-shrink-0 flex justify-center">
+          <div className="w-32 h-44 md:w-48 md:h-64 rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl">
             <img
               src="/nancy-mehta-hero-bridal.jpg"
               alt="Bridal Makeup Look by N.Touch MUA Patna"
@@ -1662,7 +1662,7 @@ function Booking() {
       <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-blush-200/30 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Decorative photo */}
-      <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-60 h-80 rounded-3xl overflow-hidden opacity-20 hidden lg:block pointer-events-none">
+      <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-60 h-80 rounded-3xl overflow-hidden opacity-20 hidden md:block pointer-events-none">
         <img src="/nancy-mehta-hero-bridal.jpg" alt="Bridal Look by N.Touch MUA" className="w-full h-full object-cover" />
       </div>
 
