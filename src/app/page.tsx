@@ -632,7 +632,7 @@ function Hero() {
       {/* ── Main Content ── */}
       <motion.div
         style={{ y: textY, opacity }}
-        className="relative z-10 text-center px-4 max-w-5xl mx-auto"
+        className="relative z-10 text-center px-4 pt-24 max-w-5xl mx-auto"
       >
         {/* Nancy's Photo — First thing visible */}
         <motion.div
