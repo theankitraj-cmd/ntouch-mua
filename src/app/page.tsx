@@ -924,7 +924,7 @@ function About() {
               <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-blush-100 relative shadow-xl">
                 <img 
                   src="/about-ceremony.jpg" 
-                  alt="Nancy Mehta with Lakme Academy Certificate" 
+                  alt="Nancy Mehta - Best Makeup Artist in Patna Bihar with Lakme Academy Certificate" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blush-950/40 to-transparent pointer-events-none" />
@@ -1492,6 +1492,95 @@ function Testimonials() {
               }`}
               aria-label={`Go to review ${i + 1}`}
             />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════
+   FAQ SECTION (SEO + User Trust)
+   ═══════════════════════════════════════════════════════ */
+
+function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      q: "Who is the best makeup artist in Patna?",
+      a: "Nancy Mehta (N.Touch MUA) is one of the top-rated makeup artists in Patna, Bihar. She is Lakme Academy certified and has worked at prestigious events like Miss Universe 2025 and The Cover Girl Event. She specializes in bridal, party, HD, and airbrush makeup.",
+    },
+    {
+      q: "How much does bridal makeup cost in Patna?",
+      a: "Bridal makeup pricing depends on the package you choose. N.Touch MUA offers premium packages including HD/Airbrush base, 3D eye makeup, hairstyling, saree draping, and skin prep. Contact Nancy at +91 89691 84453 or WhatsApp for a personalized quote.",
+    },
+    {
+      q: "Does Nancy Mehta provide makeup services outside Patna?",
+      a: "Yes! Nancy travels to nearby cities across Bihar and Jharkhand including Gaya, Muzaffarpur, Bhagalpur, Darbhanga, Ara, Nalanda, and Ranchi for bridal and event makeup bookings.",
+    },
+    {
+      q: "What types of makeup services are available?",
+      a: "N.Touch MUA offers bridal makeup, party & reception glam, HD & airbrush makeup, editorial & photoshoot makeup, engagement makeup, skincare & facials, nail care, saree draping, and complete traditional styling.",
+    },
+    {
+      q: "How far in advance should I book my bridal makeup?",
+      a: "We recommend booking at least 2-3 months in advance for bridal makeup, especially during the wedding season (October-February). Early booking ensures your preferred date is secured and allows time for a trial session.",
+    },
+    {
+      q: "Is a trial makeup session available before the wedding?",
+      a: "Yes, Nancy offers pre-wedding trial sessions so you can see your final look beforehand. This helps us customize everything from base shade to eye makeup style to match your outfit and personal preferences perfectly.",
+    },
+  ];
+
+  return (
+    <section className="py-section bg-surface overflow-hidden">
+      <div className="max-w-3xl mx-auto px-6 md:px-8">
+        <ScrollReveal>
+          <p className="font-body text-sm tracking-[0.2em] uppercase text-gold-500 mb-4 text-center">
+            Common Questions
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl font-light text-plum text-center mb-12">
+            Frequently <span className="italic text-blush-500">Asked</span>
+          </h2>
+        </ScrollReveal>
+
+        <div className="space-y-3">
+          {faqs.map((faq, i) => (
+            <ScrollReveal key={i} delay={i * 0.05}>
+              <div className="border border-blush-100 rounded-2xl overflow-hidden bg-white/50 hover:bg-blush-50/50 transition-colors">
+                <button
+                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  className="w-full flex items-center justify-between p-5 md:p-6 cursor-pointer text-left"
+                >
+                  <span className="font-body text-base md:text-lg text-plum font-medium pr-4">
+                    {faq.q}
+                  </span>
+                  <motion.div
+                    animate={{ rotate: openIndex === i ? 45 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex-shrink-0 w-8 h-8 rounded-full bg-blush-100 flex items-center justify-center"
+                  >
+                    <span className="text-blush-500 text-xl leading-none">+</span>
+                  </motion.div>
+                </button>
+                <AnimatePresence>
+                  {openIndex === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <p className="px-5 md:px-6 pb-5 md:pb-6 font-body text-sm md:text-base text-plum-soft leading-relaxed">
+                        {faq.a}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
@@ -2080,7 +2169,7 @@ function LookBreakdown() {
              style={{ y: layer4Y, translateZ: -120 }} 
              className="absolute inset-0 rounded-[40px] border border-white/20 bg-black/40 overflow-hidden flex items-end p-8 shadow-[0_30px_80px_rgba(0,0,0,0.8)]"
            >
-              <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=600" alt="Skin Prep" className="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-40" />
+              <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=600" alt="Skin Prep Makeup Service in Patna by Nancy Mehta" className="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-40" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
               <div className="relative z-10">
                 <p className="text-gold-400 font-body text-xs tracking-widest uppercase mb-2">01 Base</p>
@@ -2093,7 +2182,7 @@ function LookBreakdown() {
              style={{ y: layer3Y, translateZ: -40 }} 
              className="absolute inset-0 rounded-[40px] border border-blush-300/30 bg-[#2A1118]/60 overflow-hidden flex items-end p-8 shadow-[0_30px_60px_rgba(0,0,0,0.6)] backdrop-blur-md"
            >
-              <img src="https://images.unsplash.com/photo-1599305090598-fe179d501227?q=80&w=600" alt="Foundation" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50" />
+              <img src="https://images.unsplash.com/photo-1599305090598-fe179d501227?q=80&w=600" alt="HD Foundation Makeup Application Patna" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2A1118]/90 to-transparent" />
               <div className="relative z-10">
                 <p className="text-gold-400 font-body text-xs tracking-widest uppercase mb-2">02 Canvas</p>
@@ -2106,7 +2195,7 @@ function LookBreakdown() {
              style={{ y: layer2Y, translateZ: 40 }} 
              className="absolute inset-0 rounded-[40px] border border-blush-400/40 bg-blush-900/40 overflow-hidden flex items-end p-8 shadow-[0_30px_60px_rgba(212,69,107,0.3)] backdrop-blur-md"
            >
-              <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?q=80&w=600" alt="Structure" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60" />
+              <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?q=80&w=600" alt="Sculpt and Highlight Bridal Makeup Technique Patna" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60" />
               <div className="absolute inset-0 bg-gradient-to-t from-blush-900/90 to-transparent" />
               <div className="relative z-10">
                 <p className="text-gold-400 font-body text-xs tracking-widest uppercase mb-2">03 Structure</p>
@@ -2119,7 +2208,7 @@ function LookBreakdown() {
              style={{ y: layer1Y, translateZ: 120 }} 
              className="absolute inset-0 rounded-[40px] border border-blush-300/60 bg-gradient-to-tr from-blush-600/60 to-blush-400/40 overflow-hidden flex items-end p-8 shadow-[0_40px_100px_rgba(212,69,107,0.6)] backdrop-blur-xl"
            >
-              <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=600" alt="Finish" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-80" />
+              <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=600" alt="Signature Eye Makeup Look by N.Touch MUA Patna" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-80" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               {/* Glass Reflection */}
               <div className="absolute top-0 inset-x-0 h-1/3 bg-gradient-to-b from-white/30 to-transparent scale-y-[-1]" />
@@ -2442,7 +2531,7 @@ function InstagramSync() {
           {posts.map((post, i) => (
             <ScrollReveal key={post.id} delay={i * 0.1}>
               <div className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-md">
-                <img src={post.img} alt="Instagram Post" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={post.img} alt="N.Touch MUA Nancy Mehta Makeup Work Patna Bihar" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
                   <Heart className="w-6 h-6 text-white fill-white" />
                   <span className="font-display text-xl text-white">{post.likes}</span>
@@ -2568,7 +2657,7 @@ function ScrollZoomReveal() {
           style={{ scale, opacity }}
           className="w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden border border-blush-500/20 shadow-[0_0_80px_rgba(212,69,107,0.15)] bg-[#110509]"
         >
-          <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1000" alt="Zoom Detail" className="w-full h-full object-cover mix-blend-overlay opacity-80" />
+          <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1000" alt="Professional Makeup Tools Used by Nancy Mehta Patna" className="w-full h-full object-cover mix-blend-overlay opacity-80" />
         </motion.div>
         <motion.div style={{ opacity: textOpacity }} className="absolute top-1/4 text-center pointer-events-none">
            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-plum">Precision in every detail.</h2>
@@ -2772,6 +2861,7 @@ export default function Home() {
         <ShopNancysKit />
         <InstagramSync />
         <HolographicCard />
+        <FAQSection />
         <Booking />
         <Footer />
         
