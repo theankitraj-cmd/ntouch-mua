@@ -914,18 +914,12 @@ function About() {
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="font-body text-base md:text-lg text-plum-soft leading-relaxed mb-6">
-                With over 7 years of experience and a certification from the prestigious
-                Lakme Academy, Nancy Mehta has transformed hundreds of brides and clients
-                into their most beautiful selves. Based in Patna, Bihar, her artistry
-                blends traditional elegance with contemporary trends.
+                Nancy Mehta is a certified Makeup Artist and Skincare Specialist with 2 years of professional experience, trained at the prestigious Lakme Academy. Skilled in creating natural and customized looks, she blends creativity with precision to deliver exceptional results for every client.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <p className="font-body text-base md:text-lg text-plum-soft leading-relaxed mb-8">
-                Every face tells a story, and Nancy&apos;s mission is to enhance that story —
-                not mask it. Her signature technique focuses on flawless, skin-like bases
-                that photograph beautifully and last through every moment of your special
-                day.
+                Her expertise ranges from flawless bridal styling to high-pressure event glam, including her work supporting contestants at <strong className="text-plum font-medium">Miss Universe 2025</strong> and <strong className="text-plum font-medium">The Cover Girl Event</strong>. Every look she creates ensures you step into the spotlight with absolute confidence and radiance.
               </p>
             </ScrollReveal>
 
@@ -933,9 +927,9 @@ function About() {
             <ScrollReveal delay={0.4}>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: Sparkles, text: "Flawless Base Expert" },
-                  { icon: Heart, text: "Bridal Specialist" },
-                  { icon: Star, text: "500+ Happy Clients" },
+                  { icon: Sparkles, text: "Event & Stage Makeup" },
+                  { icon: Heart, text: "Skincare Specialist" },
+                  { icon: Star, text: "Miss Universe Experience" },
                   { icon: Award, text: "Lakme Certified" },
                 ].map((item, i) => (
                   <div
