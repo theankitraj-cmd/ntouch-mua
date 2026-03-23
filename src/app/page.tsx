@@ -63,9 +63,9 @@ function ScrollReveal({
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50, filter: "blur(10px)", scale: 0.98 }}
-      animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 } : {}}
-      transition={{ duration: 1.2, delay, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}
@@ -648,9 +648,9 @@ function Hero() {
 
         {/* Subtitle with shimmer line */}
         <motion.p
-          initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           className="font-body text-sm md:text-base tracking-[0.25em] uppercase text-white/70 mb-6"
         >
           Lakme Academy Certified
@@ -672,8 +672,8 @@ function Hero() {
             {letters.map((letter, i) => (
               <motion.span
                 key={i}
-                initial={{ opacity: 0, y: 80, rotateX: -90, scale: 0.5, filter: "blur(20px)" }}
-                animate={{ opacity: 1, y: 0, rotateX: 0, scale: 1, filter: "blur(0px)" }}
+                initial={{ opacity: 0, y: 80, rotateX: -90, scale: 0.5 }}
+                animate={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
                 transition={{
                   duration: 1,
                   delay: 0.6 + i * 0.06,
@@ -690,9 +690,9 @@ function Hero() {
 
         {/* Stylish subtitle with & and decorative lines */}
         <motion.div
-          initial={{ opacity: 0, y: 30, filter: "blur(10px)", scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
-          transition={{ duration: 1.5, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
           className="flex items-center justify-center gap-3 md:gap-5 mb-5"
         >
           <div className="w-8 md:w-16 h-[1px] bg-gradient-to-r from-transparent to-white/20" />
@@ -710,9 +710,9 @@ function Hero() {
 
         {/* ── Gooey Text Morphing — Service Types ── */}
         <motion.div
-          initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1.5, delay: 1.3, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.3 }}
           style={{ "--color-foreground": "#ffffff" } as React.CSSProperties}
         >
           <GooeyText
@@ -1863,15 +1863,15 @@ function SplashScreen({ onComplete }: { onComplete: () => void }) {
                 ? "font-display text-4xl sm:text-6xl md:text-8xl font-light tracking-wide"
                 : "font-display text-4xl sm:text-6xl md:text-8xl font-light italic"
             }`}
-            initial={{ opacity: 0, scale: 0.8, y: 20, filter: "blur(10px)" }}
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={
               currentWord === i
-                ? { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }
+                ? { opacity: 1, scale: 1, y: 0 }
                 : currentWord > i
-                ? { opacity: 0, scale: 1.1, y: -20, filter: "blur(10px)" }
-                : { opacity: 0, scale: 0.8, y: 20, filter: "blur(10px)" }
+                ? { opacity: 0, scale: 1.1, y: -20 }
+                : { opacity: 0, scale: 0.8, y: 20 }
             }
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             style={{
               color: greeting.lang === "brand" ? "#D4AF37" : "rgba(255,255,255,0.9)",
             }}
