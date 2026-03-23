@@ -1665,12 +1665,14 @@ function Booking() {
   const [step, setStep] = useState(0);
   const [formState, setFormState] = useState({
     name: "",
+    email: "",
     date: "",
     eventType: "bridal",
     phone: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const nextStep = () => setStep((s) => s + 1);
 
@@ -1721,9 +1723,9 @@ function Booking() {
             </button>
 
             {/* Progress indicator */}
-            {step > 0 && step < 6 && (
+            {step > 0 && step < 7 && (
               <div className="absolute top-12 left-1/2 -translate-x-1/2 flex gap-2">
-                 {[1,2,3,4,5].map(i => (
+                 {[1,2,3,4,5,6].map(i => (
                    <div key={i} className={`h-1.5 rounded-full transition-all duration-500 ${i <= step ? "w-8 bg-blush-500" : "w-3 bg-blush-200"}`} />
                  ))}
               </div>
@@ -1816,16 +1818,38 @@ function Booking() {
                      />
                      <div className="mt-8 flex items-center gap-4">
                        <button onClick={nextStep} disabled={formState.phone.length < 10} className="px-8 py-3 bg-plum text-white rounded-full disabled:opacity-50 cursor-pointer flex items-center gap-2 hover:bg-black transition-colors">
-                         Nearly done <Check className="w-4 h-4" />
+                         Continue <Check className="w-4 h-4" />
                        </button>
                        <span className="text-sm text-plum/40">press Enter ↵</span>
                      </div>
                    </motion.div>
                  )}
 
-                 {/* Step 5 */}
-                 {step === 5 && (
-                   <motion.div key="step5" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -50 }} className="w-full">
+                  {/* Step 5 (Email) */}
+                  {step === 5 && (
+                    <motion.div key="step5" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -50 }} className="w-full">
+                      <h3 className="font-display text-4xl md:text-5xl text-plum mb-8">Lastly, what's your email for the confirmation?</h3>
+                      <input 
+                        autoFocus
+                        type="email" 
+                        value={formState.email}
+                        onChange={(e) => setFormState({...formState, email: e.target.value})}
+                        onKeyDown={(e) => e.key === "Enter" && formState.email.includes("@") && nextStep()}
+                        className="w-full text-3xl md:text-5xl font-light text-plum bg-transparent border-b-2 border-blush-300 focus:border-blush-500 outline-none pb-4 placeholder:text-plum/20"
+                        placeholder="your@email.com"
+                      />
+                      <div className="mt-8 flex items-center gap-4">
+                        <button onClick={nextStep} disabled={!formState.email.includes("@")} className="px-8 py-3 bg-plum text-white rounded-full disabled:opacity-50 cursor-pointer flex items-center gap-2 hover:bg-black transition-colors">
+                          Nearly done <Check className="w-4 h-4" />
+                        </button>
+                        <span className="text-sm text-plum/40">press Enter ↵</span>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {/* Step 6 (Message) */}
+                  {step === 6 && (
+                    <motion.div key="step6" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -50 }} className="w-full">
                      <h3 className="font-display text-3xl md:text-4xl text-plum mb-6">Finally, tell us everything about your dream look.</h3>
                      <textarea 
                        autoFocus
@@ -1841,9 +1865,12 @@ function Booking() {
                         {!submitted ? (
                           <motion.button
                             type="button"
-                            onDoubleClick={(e) => {
+                            onDoubleClick={async (e) => {
                               e.preventDefault();
-                              setSubmitted(true);
+                              if (isSending) return;
+                              setIsSending(true);
+                              
+                              // Play Sound
                               try {
                                 const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
                                 const osc = ctx.createOscillator();
@@ -1859,17 +1886,31 @@ function Booking() {
                                 osc.start(ctx.currentTime);
                                 osc.stop(ctx.currentTime + 0.5);
                               } catch (err) {}
-                              setTimeout(() => nextStep(), 1500);
+
+                              // Send Email
+                              try {
+                                const res = await sendBookingEmails(formState);
+                                if (res.success) {
+                                  setSubmitted(true);
+                                  setTimeout(() => nextStep(), 1500);
+                                } else {
+                                  alert(res.message || "Failed to send booking. Please contact +91 89691 84453 directly.");
+                                }
+                              } catch (err) {
+                                 console.error(err);
+                              } finally {
+                                setIsSending(false);
+                              }
                             }}
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="w-full relative overflow-hidden px-6 py-4 rounded-2xl bg-black border border-white/20 text-white font-body cursor-pointer flex items-center justify-between group shadow-xl hover:shadow-2xl"
+                            className="w-full relative overflow-hidden px-6 py-4 rounded-2xl bg-black border border-white/20 text-white font-body cursor-pointer flex items-center justify-between group shadow-xl hover:shadow-2xl disabled:opacity-50"
                           >
                             <div className="flex items-center gap-3">
                               <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
-                                <span className="font-display text-base"></span>
+                                {isSending ? <div className="w-4 h-4 border-2 border-white border-t-transparent animate-spin rounded-full" /> : <span className="font-display text-base"></span>}
                               </div>
-                              <span className="text-base font-semibold tracking-wide">Pay</span>
+                              <span className="text-base font-semibold tracking-wide">{isSending ? "Sending..." : "Confirm Booking"}</span>
                             </div>
                             <div className="flex items-center gap-2">
                               <span className="text-xs text-white/60 animate-pulse font-medium">Double-Click</span>
@@ -1892,14 +1933,14 @@ function Booking() {
                    </motion.div>
                  )}
 
-                 {/* Step 6 (Success) */}
-                 {step === 6 && (
-                   <motion.div key="step6" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center w-full">
+                 {/* Step 7 (Success) */}
+                 {step === 7 && (
+                   <motion.div key="step7" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center w-full">
                      <div className="w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-8 border-4 border-emerald-200">
                         <Check className="w-12 h-12 text-emerald-600" />
                      </div>
                      <h3 className="font-display text-4xl md:text-5xl text-plum mb-4">You're all set, {formState.name}!</h3>
-                     <p className="font-body text-xl text-plum-soft mb-12">I have received your request for {formState.eventType} on {formState.date}. I will WhatsApp you at {formState.phone} shortly!</p>
+                     <p className="font-body text-xl text-plum-soft mb-12">I have received your request for {formState.eventType} on {formState.date}. A confirmation email has been sent to {formState.email}. I will WhatsApp you at {formState.phone} shortly!</p>
                      <button onClick={() => setIsOpen(false)} className="px-10 py-4 bg-plum hover:bg-black text-white rounded-full font-body tracking-wider text-sm cursor-pointer transition-colors shadow-lg">
                        Return to Website
                      </button>
