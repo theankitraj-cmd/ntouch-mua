@@ -1592,6 +1592,10 @@ function FAQSection() {
       a: "We recommend booking at least 2-3 months in advance for bridal makeup, especially during the wedding season (October-February). Early booking ensures your preferred date is secured and allows time for a trial session.",
     },
     {
+      q: "Where in Patna does Nancy Mehta provide bridal makeup services?",
+      a: "Nancy providing premium on-location bridal makeup services across all major areas of Patna including Boring Road, Patliputra Colony, Kankarbagh, Raja Bazar, Bailey Road, Gola Road, Saguna More, Anisabad, and Ashiana Nagar. She brings her full professional studio setup to your doorstep for maximum comfort.",
+    },
+    {
       q: "Is a trial makeup session available before the wedding?",
       a: "Yes, Nancy offers pre-wedding trial sessions so you can see your final look beforehand. This helps us customize everything from base shade to eye makeup style to match your outfit and personal preferences perfectly.",
     },
@@ -2027,6 +2031,19 @@ function Footer() {
                   @n.touchmua
                 </span>
               </a>
+
+              {/* Hyper-Local SEO Map */}
+              <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 h-32 md:h-40 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115163.665796796!2d85.0606409!3d25.6081755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed5842f03f7705%3A0x1da50901da39618f!2sPatna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1711200000000!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={false} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             </div>
           </div>
         </div>
