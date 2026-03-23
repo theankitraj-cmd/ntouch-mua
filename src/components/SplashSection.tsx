@@ -87,7 +87,7 @@ export function SplashScreen({ onComplete }: { onComplete: () => void }) {
       </div>
 
       <motion.p
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 font-body text-[10px] uppercase tracking-[0.6em] text-white/60 z-20"
+        className="absolute bottom-10 sm:bottom-12 w-full text-center px-4 font-body text-[9px] sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.6em] text-white/60 z-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: currentWord >= 2 ? 1 : 0 }}
         transition={{ duration: 0.5 }}
