@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://ntouch-mua.vercel.app",
+    canonical: "https://ntouchmua.com",
   },
   other: {
     "geo.region": "IN-BR",
@@ -86,19 +86,19 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "BeautySalon",
-      "@id": "https://ntouch-mua.vercel.app/#business",
+      "@id": "https://ntouchmua.com/#business",
       name: "N.Touch MUA — Nancy Mehta",
-      alternateName: "N.Touch MUA",
+      alternateName: "Best Bridal Makeup Artist in Patna - N.Touch MUA",
       description:
-        "Patna's premier Lakme Academy certified makeup artist. Specializing in bridal makeup, party glam, HD & airbrush makeup, editorial looks, skincare, and saree draping. As seen at Miss Universe 2025.",
-      url: "https://ntouch-mua.vercel.app",
+        "Nancy Mehta is the best bridal makeup artist in Patna, Bihar. Lakme Academy certified and specializing in luxury bridal makeup, HD makeup, airbrush makeup, and editorial looks. Top-rated wedding makeup artist in Patna.",
+      url: "https://ntouchmua.com",
       telephone: "+918969184453",
       email: "nancymehta247@gmail.com",
-      image: "https://ntouch-mua.vercel.app/nancy-mehta-makeup-artist-patna-bihar.jpg",
+      image: "https://ntouchmua.com/nancy-mehta-hero-bridal.jpg",
       priceRange: "₹₹-₹₹₹",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Patna",
+        streetAddress: "Boring Road / Kankarbagh Area",
         addressLocality: "Patna",
         addressRegion: "Bihar",
         postalCode: "800001",
@@ -238,13 +238,13 @@ const jsonLd = {
     },
     {
       "@type": "Person",
-      "@id": "https://ntouch-mua.vercel.app/#person",
+      "@id": "https://ntouchmua.com/#person",
       name: "Nancy Mehta",
       jobTitle: "Professional Makeup Artist",
       description:
         "Lakme Academy certified makeup artist with 2 years of experience. Has worked at Miss Universe 2025 and The Cover Girl Event. Based in Patna, Bihar.",
-      url: "https://ntouch-mua.vercel.app",
-      image: "https://ntouch-mua.vercel.app/nancy-mehta-makeup-artist-patna-bihar.jpg",
+      url: "https://ntouchmua.com",
+      image: "https://ntouchmua.com/nancy-mehta-hero-bridal.jpg",
       telephone: "+918969184453",
       email: "nancymehta247@gmail.com",
       address: {
@@ -283,40 +283,41 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://ntouch-mua.vercel.app/#website",
-      url: "https://ntouch-mua.vercel.app",
+      "@id": "https://ntouchmua.com/#website",
+      url: "https://ntouchmua.com",
       name: "N.Touch MUA",
       description: "Luxury Makeup Artistry by Nancy Mehta — Patna, Bihar",
       publisher: {
-        "@id": "https://ntouch-mua.vercel.app/#person",
+        "@id": "https://ntouchmua.com/#person",
       },
     },
     {
       "@type": "BreadcrumbList",
+      "@id": "https://ntouchmua.com/#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://ntouch-mua.vercel.app",
+          item: "https://ntouchmua.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Portfolio",
-          item: "https://ntouch-mua.vercel.app/#portfolio",
+          item: "https://ntouchmua.com/#portfolio",
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "Services",
-          item: "https://ntouch-mua.vercel.app/#services",
+          item: "https://ntouchmua.com/#services",
         },
         {
           "@type": "ListItem",
           position: 4,
           name: "Book Now",
-          item: "https://ntouch-mua.vercel.app/#booking",
+          item: "https://ntouchmua.com/#booking",
         },
       ],
     },
