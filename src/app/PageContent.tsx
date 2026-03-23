@@ -1474,7 +1474,7 @@ function Testimonials() {
           <div className="w-32 h-44 md:w-48 md:h-64 rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl">
             <img
               src="/nancy-mehta-hero-bridal.jpg"
-              alt="Bridal Makeup Look by N.Touch MUA Patna"
+              alt="Bridal Makeup Look by N.Touch — Professional Makeup Artist in Patna Patna"
               className="w-full h-full object-cover object-top"
             />
           </div>
@@ -1573,11 +1573,11 @@ function FAQSection() {
   const faqs = [
     {
       q: "Who is the best makeup artist in Patna?",
-      a: "Nancy Mehta (N.Touch MUA) is one of the top-rated makeup artists in Patna, Bihar. She is Lakme Academy certified and has worked at prestigious events like Miss Universe 2025 and The Cover Girl Event. She specializes in bridal, party, HD, and airbrush makeup.",
+      a: "Nancy Mehta (N.Touch — Professional Makeup Artist in Patna) is one of the top-rated makeup artists in Patna, Bihar. She is Lakme Academy certified and has worked at prestigious events like Miss Universe 2025 and The Cover Girl Event. She specializes in bridal, party, HD, and airbrush makeup.",
     },
     {
       q: "How much does bridal makeup cost in Patna?",
-      a: "Bridal makeup pricing depends on the package you choose. N.Touch MUA offers premium packages including HD/Airbrush base, 3D eye makeup, hairstyling, saree draping, and skin prep. Contact Nancy at +91 89691 84453 or WhatsApp for a personalized quote.",
+      a: "Bridal makeup pricing depends on the package you choose. N.Touch — Professional Makeup Artist in Patna offers premium packages including HD/Airbrush base, 3D eye makeup, hairstyling, saree draping, and skin prep. Contact Nancy at +91 89691 84453 or WhatsApp for a personalized quote.",
     },
     {
       q: "Does Nancy Mehta provide makeup services outside Patna?",
@@ -1585,7 +1585,7 @@ function FAQSection() {
     },
     {
       q: "What types of makeup services are available?",
-      a: "N.Touch MUA offers bridal makeup, party & reception glam, HD & airbrush makeup, editorial & photoshoot makeup, engagement makeup, skincare & facials, nail care, saree draping, and complete traditional styling.",
+      a: "N.Touch — Professional Makeup Artist in Patna offers bridal makeup, party & reception glam, HD & airbrush makeup, editorial & photoshoot makeup, engagement makeup, skincare & facials, nail care, saree draping, and complete traditional styling.",
     },
     {
       q: "How far in advance should I book my bridal makeup?",
@@ -1925,7 +1925,7 @@ function Footer() {
       <article className="sr-only" aria-hidden="false" itemScope itemType="https://schema.org/Person">
         <h2 itemProp="name" className="text-sm opacity-50 font-light">Nancy Mehta — Highly Rated Bridal Makeup Artist in Patna, Bihar</h2>
         <p itemProp="description">
-          Nancy Mehta, known professionally as N.Touch MUA, is a Lakme Academy certified professional makeup artist based in Patna, Bihar, India. 
+          Nancy Mehta, known professionally as N.Touch — Professional Makeup Artist in Patna, is a Lakme Academy certified professional makeup artist based in Patna, Bihar, India. 
           With over 2 years of expertise in the beauty industry, she specializes in bridal makeup, HD and airbrush makeup, party and reception glam, 
           editorial and photoshoot makeup, skincare treatments, and traditional Indian styling including saree draping.
         </p>
@@ -1953,7 +1953,7 @@ function Footer() {
           <div>
             <div className="flex items-center gap-4 mb-3">
               <div className="w-12 h-12 rounded-full overflow-hidden border border-white/20">
-                <img src="/nancy-mehta-hero-bridal.jpg" alt="N.Touch MUA" className="w-full h-full object-cover object-top" />
+                <img src="/nancy-mehta-hero-bridal.jpg" alt="N.Touch — Professional Makeup Artist in Patna" className="w-full h-full object-cover object-top" />
               </div>
               <h3 className="font-display text-3xl text-white font-light">
                 N.Touch
@@ -2051,7 +2051,7 @@ function Footer() {
         {/* Copyright */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-body text-xs text-white/30">
-            &copy; {new Date().getFullYear()} N.Touch MUA. All rights reserved.
+            &copy; {new Date().getFullYear()} N.Touch — Professional Makeup Artist in Patna. All rights reserved.
           </p>
           <p className="font-body text-xs text-white/30">
             Crafted with <Heart className="w-3 h-3 inline text-blush-500" /> by N.Touch
@@ -2061,7 +2061,7 @@ function Footer() {
 
       {/* Local SEO Keywords Block */}
       <section className="sr-only">
-        <h2>Best Bridal Makeup Artist in Patna - Nancy Mehta MUA</h2>
+        <h2>Best Bridal Makeup Artist in Patna - Nancy Mehta — Best Bridal Makeup Artist in Patna</h2>
         <p>Expert <strong>Makeup Artist in Patna</strong> specializing in <strong>Bridal Makeup Patna</strong> and luxury transformations across Bihar.</p>
         <p>Nancy Mehta is a <strong>Lakme Academy certified professional</strong> specializing in <strong>bridal makeup in Patna, Bihar</strong>. 
         Offering HD makeup, airbrush makeup, and engagement party looks. Top-rated makeup artist for weddings in Patna.</p>
@@ -2258,7 +2258,7 @@ function LookBreakdown() {
              style={{ y: layer1Y, translateZ: 120 }} 
              className="absolute inset-0 rounded-[40px] border border-blush-300/60 bg-gradient-to-tr from-blush-600/60 to-blush-400/40 overflow-hidden flex items-end p-8 shadow-[0_40px_100px_rgba(212,69,107,0.6)] backdrop-blur-xl"
            >
-              <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=600" alt="Signature Eye Makeup Look by N.Touch MUA Patna" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-80" />
+              <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=600" alt="Signature Eye Makeup Look by N.Touch — Professional Makeup Artist in Patna Patna" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-80" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               {/* Glass Reflection */}
               <div className="absolute top-0 inset-x-0 h-1/3 bg-gradient-to-b from-white/30 to-transparent scale-y-[-1]" />
@@ -2572,7 +2572,7 @@ function InstagramSync() {
           <ScrollReveal delay={0.2}>
             <a href="https://instagram.com/n.touchmua" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 text-white font-body text-sm font-medium tracking-wide shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <Instagram className="w-5 h-5" />
-              Follow @NTOUCH.MUA
+              Follow @NTOUCH.Makeup Artist
             </a>
           </ScrollReveal>
         </div>
@@ -2581,7 +2581,7 @@ function InstagramSync() {
           {posts.map((post, i) => (
             <ScrollReveal key={post.id} delay={i * 0.1}>
               <div className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-md">
-                <img src={post.img} alt="N.Touch MUA Nancy Mehta Makeup Work Patna Bihar" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={post.img} alt="N.Touch — Professional Makeup Artist in Patna Nancy Mehta Makeup Work Patna Bihar" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
                   <Heart className="w-6 h-6 text-white fill-white" />
                   <span className="font-display text-xl text-white">{post.likes}</span>
@@ -2671,7 +2671,7 @@ function HolographicCard() {
                    +91 89691 84453
                  </p>
                  <p className="font-body text-[10px] md:text-xs text-white/40 tracking-widest font-mono">
-                   IG: @NTOUCH.MUA
+                   IG: @NTOUCH.Makeup Artist
                  </p>
                </div>
                <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-md rounded-lg flex items-center justify-center border border-white/20">

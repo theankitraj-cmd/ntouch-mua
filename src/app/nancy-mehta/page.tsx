@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title:
-    "Nancy Mehta — Professional Makeup Artist in Patna, Bihar | N.Touch MUA",
+    "Nancy Mehta — Professional Makeup Artist in Patna, Bihar | N.Touch — Professional Makeup Artist in Patna",
   description:
     "Nancy Mehta is a Lakme Academy certified professional makeup artist based in Patna, Bihar. Specializing in bridal, HD, airbrush, and editorial makeup. Known for her work at Miss Universe 2025 and The Cover Girl Event. Book your appointment today.",
   keywords: [
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Nancy Mehta makeup artist",
     "Nancy Mehta Patna",
     "who is Nancy Mehta",
-    "N.Touch MUA",
+    "N.Touch — Professional Makeup Artist in Patna",
     "Nancy Mehta bridal makeup",
     "Nancy Mehta Miss Universe",
     "best makeup artist Patna",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Nancy Mehta reviews",
   ],
   openGraph: {
-    title: "Nancy Mehta — Professional Makeup Artist in Patna | N.Touch MUA",
+    title: "Nancy Mehta — Professional Makeup Artist in Patna | N.Touch — Professional Makeup Artist in Patna",
     description:
       "Lakme Academy certified. Bridal, HD & airbrush makeup specialist. As seen at Miss Universe 2025. Based in Patna, Bihar.",
     type: "profile",
@@ -55,10 +55,10 @@ const jsonLd = {
     "@type": "Person",
     "@id": "https://ntouchmua.com/#person",
     name: "Nancy Mehta",
-    alternateName: ["N.Touch MUA", "Nancy Mehta MUA", "Nancy Mehta Makeup Artist"],
+    alternateName: ["N.Touch — Professional Makeup Artist in Patna", "Nancy Mehta — Best Bridal Makeup Artist in Patna", "Nancy Mehta Makeup Artist"],
     jobTitle: "Professional Makeup Artist",
     description:
-      "Nancy Mehta, professionally known as N.Touch MUA, is a Lakme Academy certified makeup artist based in Patna, Bihar. She has 2+ years of professional experience and has worked at Miss Universe 2025 and The Cover Girl Event 2025.",
+      "Nancy Mehta, professionally known as N.Touch — Professional Makeup Artist in Patna, is a Lakme Academy certified makeup artist based in Patna, Bihar. She has 2+ years of professional experience and has worked at Miss Universe 2025 and The Cover Girl Event 2025.",
     url: "https://ntouchmua.com/nancy-mehta",
     image: "https://ntouchmua.com/nancy-mehta-makeup-artist-patna-bihar.jpg",
     telephone: "+918969184453",
@@ -114,12 +114,12 @@ const jsonLd = {
     ],
     memberOf: {
       "@type": "Organization",
-      name: "N.Touch MUA",
+      name: "N.Touch — Professional Makeup Artist in Patna",
       url: "https://ntouchmua.com",
     },
     worksFor: {
       "@type": "BeautySalon",
-      name: "N.Touch MUA",
+      name: "N.Touch — Professional Makeup Artist in Patna",
       url: "https://ntouchmua.com",
     },
     sameAs: [
@@ -202,7 +202,7 @@ export default function NancyMehtaPage() {
 
               <div className="prose prose-lg max-w-none" style={{ fontFamily: "'Outfit', sans-serif", color: "#584144", lineHeight: "1.8" }} itemProp="articleBody">
                 <p>
-                  <strong style={{ color: "#2E131E" }}>Nancy Mehta</strong>, professionally known as <strong style={{ color: "#2E131E" }}>N.Touch MUA</strong>, is one of the most sought-after makeup artists in Patna, Bihar. A Lakme Academy certified Makeup Artist and Skincare Specialist, Nancy brings over 2 years of dedicated professional experience in the beauty and fashion industry.
+                  <strong style={{ color: "#2E131E" }}>Nancy Mehta</strong>, professionally known as <strong style={{ color: "#2E131E" }}>N.Touch — Professional Makeup Artist in Patna</strong>, is one of the most sought-after makeup artists in Patna, Bihar. A Lakme Academy certified Makeup Artist and Skincare Specialist, Nancy brings over 2 years of dedicated professional experience in the beauty and fashion industry.
                 </p>
 
                 <p>
