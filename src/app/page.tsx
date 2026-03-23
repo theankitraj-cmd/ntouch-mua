@@ -2048,6 +2048,7 @@ function SplashScreen({ onComplete }: { onComplete: () => void }) {
     { text: "مرحبا", lang: "ar" },
     { text: "こんにちは", lang: "ja" },
     { text: "Nancy Mehta", lang: "brand" },
+    { text: "Signature Look", lang: "reveal" },
   ];
 
   useEffect(() => {
@@ -2078,6 +2079,18 @@ function SplashScreen({ onComplete }: { onComplete: () => void }) {
       animate={exiting ? { y: "-100%" } : { y: 0 }}
       transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
     >
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.img
+          src="/nancy-mehta-hero-bridal.jpg"
+          alt="Signature Look"
+          className="w-full h-full object-cover object-top"
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={currentWord === greetings.length - 1 ? { opacity: 0.4, scale: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8 }}
+        />
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
+
       <div className="absolute inset-0 grain-overlay pointer-events-none" />
 
       <div className="relative z-10 w-full h-32 flex items-center justify-center">
@@ -2086,8 +2099,10 @@ function SplashScreen({ onComplete }: { onComplete: () => void }) {
             key={i}
             className={`absolute whitespace-nowrap ${
               greeting.lang === "brand"
-                ? "font-display text-4xl sm:text-6xl md:text-8xl font-light tracking-wide"
-                : "font-display text-4xl sm:text-6xl md:text-8xl font-light italic"
+                ? "font-display text-4xl sm:text-6xl md:text-8xl font-light tracking-wide text-gold-400"
+                : greeting.lang === "reveal"
+                ? "font-display text-4xl sm:text-5xl md:text-7xl font-light tracking-[0.2em] uppercase text-white"
+                : "font-display text-4xl sm:text-6xl md:text-8xl font-light italic text-white/90"
             }`}
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={
@@ -2098,9 +2113,6 @@ function SplashScreen({ onComplete }: { onComplete: () => void }) {
                 : { opacity: 0, scale: 0.8, y: 20 }
             }
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            style={{
-              color: greeting.lang === "brand" ? "#D4AF37" : "rgba(255,255,255,0.9)",
-            }}
           >
             {greeting.text}
           </motion.span>
@@ -2152,10 +2164,11 @@ function StackingProcess() {
     {
       id: "step-4",
       number: "04",
-      title: "Final Styling",
-      text: "Locking it all in, draping your outfit to perfection, and ensuring every single hair is exactly where it belongs.",
+      title: "Signature Mastery",
+      text: "The result of absolute dedication. Our iconic bridal transformations ensure you look like a masterpiece throughout your special day.",
       bg: "bg-black",
       textCol: "text-gold-400",
+      img: "/nancy-mehta-hero-bridal.jpg"
     }
   ];
 
@@ -2192,11 +2205,18 @@ function StackingProcess() {
                     <ArrowRight className="w-5 h-5 -rotate-45" />
                   </div>
                 </div>
-                <div className="mt-12 md:mt-0">
-                  <h3 className={`font-display text-3xl md:text-4xl mb-4 ${step.textCol}`}>{step.title}</h3>
-                  <p className={`font-body text-base md:text-lg opacity-80 max-w-2xl leading-relaxed ${step.textCol}`}>
-                    {step.text}
-                  </p>
+                <div className="mt-12 md:mt-0 flex flex-col md:flex-row items-end md:items-center justify-between gap-8">
+                  <div className="flex-1">
+                    <h3 className={`font-display text-3xl md:text-4xl mb-4 ${step.textCol}`}>{step.title}</h3>
+                    <p className={`font-body text-base md:text-lg opacity-80 max-w-2xl leading-relaxed ${step.textCol}`}>
+                      {step.text}
+                    </p>
+                  </div>
+                  {(step as any).img && (
+                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden border-2 border-white/20 shadow-xl shrink-0">
+                      <img src={(step as any).img} alt={step.title} className="w-full h-full object-cover" />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -2756,15 +2776,17 @@ function ScrollZoomReveal() {
    ═══════════════════════════════════════════════════════ */
 
 const editorialLooks = [
+  { img: "/nancy-mehta-hero-bridal.jpg", title: "Signature Bride" },
   { img: "/editorial-editorials.jpg", title: "Editorials" },
   { img: "/editorial-personal-shoots.jpg", title: "Personal Shoots" },
   { img: "/editorial-collabs.jpg", title: "Collabs" },
 ];
 
 const brideLooks = [
-  { img: "/bride-engagement.jpg", title: "Engagement Look" },
-  { img: "/bride-look-2.jpg", title: "" },
-  { img: "/bride-look-3.jpg", title: "" },
+  { img: "/nancy-mehta-hero-bridal.jpg", title: "Signature Masterpiece" },
+  { img: "/bride-engagement.jpg", title: "Engagement Glow" },
+  { img: "/bride-look-2.jpg", title: "Traditional Elegance" },
+  { img: "/bride-look-3.jpg", title: "Reception Glam" },
 ];
 
 const titleLooks = [
