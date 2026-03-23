@@ -21,10 +21,12 @@ export async function sendBookingEmails(data: BookingData) {
     return { success: false, message: "Server configuration error." };
   }
 
+  let successCount = 0;
+
   try {
     // 1. Send Notification to Nancy (The MUA)
-    await resend.emails.send({
-      from: "N.Touch Bookings <bookings@ntouchmua.com>", 
+    const adminRes = await resend.emails.send({
+      from: "N.Touch Bookings <onboarding@resend.dev>", // Fallback for unverified domains
       to: "nancymehta247@gmail.com",
       subject: `✨ New Booking: ${data.name} (${data.eventType})`,
       html: `
@@ -41,10 +43,17 @@ export async function sendBookingEmails(data: BookingData) {
         </div>
       `,
     });
+    console.log("Admin email response:", adminRes);
+    successCount++;
+  } catch (error) {
+    console.error("Resend Admin Error:", error);
+  }
 
+  try {
     // 2. Send Luxury Confirmation to Customer
-    await resend.emails.send({
-      from: "N.Touch MUA <bookings@ntouchmua.com>",
+    // NOTE: This will fail on Resend Free Tier unless the domain is verified.
+    const clientRes = await resend.emails.send({
+      from: "N.Touch MUA <onboarding@resend.dev>",
       to: data.email,
       subject: "Your Glam Journey Begins! ✨ | Nancy Mehta MUA",
       react: BookingConfirmationEmail({
@@ -54,10 +63,16 @@ export async function sendBookingEmails(data: BookingData) {
         message: data.message,
       }) as React.ReactElement,
     });
-
-    return { success: true };
+    console.log("Client email response:", clientRes);
+    successCount++;
   } catch (error) {
-    console.error("Resend Error:", error);
+    console.error("Resend Client Error:", error);
+  }
+
+  // Return true if at least the admin email was sent.
+  if (successCount > 0) {
+    return { success: true };
+  } else {
     return { success: false, message: "Could not send emails. Please contact us directly." };
   }
 }
