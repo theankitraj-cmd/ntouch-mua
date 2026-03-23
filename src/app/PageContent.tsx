@@ -2036,11 +2036,11 @@ function Footer() {
       {/* Local SEO Keywords Block */}
       <section className="sr-only">
         <h2>Best Bridal Makeup Artist in Patna - Nancy Mehta MUA</h2>
-        <p>Nancy Mehta is a Lakme Academy certified professional specializing in bridal makeup in Patna, Bihar. 
+        <p>Nancy Mehta is a <strong>Lakme Academy certified professional</strong> specializing in <strong>bridal makeup in Patna, Bihar</strong>. 
         Offering HD makeup, airbrush makeup, and engagement party looks. Top-rated makeup artist for weddings in Patna.</p>
         <ul>
-          <li>Best Bridal Makeup Patna</li>
-          <li>Makeup Artist in Bihar</li>
+          <li><strong>Best Bridal Makeup Patna</strong></li>
+          <li><strong>Makeup Artist in Bihar</strong></li>
           <li>Engagement Makeup Patna</li>
           <li>Party Makeup Artist Patna</li>
         </ul>

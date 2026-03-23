@@ -285,10 +285,18 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://ntouchmua.com/#website",
       url: "https://ntouchmua.com",
-      name: "N.Touch MUA",
-      description: "Luxury Makeup Artistry by Nancy Mehta — Patna, Bihar",
+      name: "N.Touch MUA — Nancy Mehta",
+      description: "Best Bridal Makeup Artist in Patna, Bihar",
       publisher: {
         "@id": "https://ntouchmua.com/#person",
+      },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: "https://ntouchmua.com/?s={search_term_string}",
+        },
+        "query-input": "required name=search_term_string",
       },
     },
     {
@@ -304,20 +312,14 @@ const jsonLd = {
         {
           "@type": "ListItem",
           position: 2,
-          name: "Portfolio",
-          item: "https://ntouchmua.com/#portfolio",
+          name: "Meet Nancy Mehta",
+          item: "https://ntouchmua.com/nancy-mehta",
         },
         {
           "@type": "ListItem",
           position: 3,
-          name: "Services",
-          item: "https://ntouchmua.com/#services",
-        },
-        {
-          "@type": "ListItem",
-          position: 4,
-          name: "Book Now",
-          item: "https://ntouchmua.com/#booking",
+          name: "Portfolio",
+          item: "https://ntouchmua.com/#portfolio",
         },
       ],
     },
