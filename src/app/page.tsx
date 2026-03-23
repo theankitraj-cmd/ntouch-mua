@@ -805,6 +805,59 @@ function Hero() {
    TRUST STRIP
    ═══════════════════════════════════════════════════════ */
 
+/* ═══════════════════════════════════════════════════════
+   SOCIAL PROOF MARQUEE
+   ═══════════════════════════════════════════════════════ */
+
+function SocialProofMarquee() {
+  const items = [
+    "✦ As Seen at Miss Universe 2025",
+    "✦ The Cover Girl Event",
+    "✦ 100+ Happy Brides",
+    "✦ Lakme Academy Certified",
+    "✦ Patna's Premier Makeup Artist",
+    "✦ Bridal & Editorial Specialist",
+    "✦ HD & Airbrush Expert",
+  ];
+
+  // Duplicate for seamless loop
+  const marqueeItems = [...items, ...items, ...items];
+
+  return (
+    <div className="relative bg-black overflow-hidden py-3 border-y border-white/5">
+      {/* Fade edges */}
+      <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-black to-transparent pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-black to-transparent pointer-events-none" />
+
+      <motion.div
+        className="flex gap-8 whitespace-nowrap"
+        animate={{ x: ["-33.33%", "0%"] }}
+        transition={{
+          x: {
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 25,
+            ease: "linear",
+          },
+        }}
+      >
+        {marqueeItems.map((item, i) => (
+          <span
+            key={i}
+            className="font-body text-xs md:text-sm tracking-[0.15em] uppercase text-white/50 flex-shrink-0"
+          >
+            {item}
+          </span>
+        ))}
+      </motion.div>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════
+   TRUST STRIP
+   ═══════════════════════════════════════════════════════ */
+
 function TrustStrip() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
 
@@ -1465,7 +1518,7 @@ function Booking() {
   const nextStep = () => setStep((s) => s + 1);
 
   return (
-    <section id="booking" className="relative py-32 md:py-48 bg-surface overflow-hidden">
+    <section id="booking" className="relative py-20 md:py-28 bg-surface overflow-hidden">
       <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-blush-200/30 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 text-center">
@@ -2003,7 +2056,7 @@ function LookBreakdown() {
   const scale = useTransform(scrollYProgress, [0.2, 0.6], [1, 0.85]);
 
   return (
-    <section ref={containerRef} className="py-32 md:py-48 bg-[#1A0A10] overflow-hidden relative" style={{ perspective: "2000px" }}>
+    <section ref={containerRef} className="py-20 md:py-28 bg-[#1A0A10] overflow-hidden relative" style={{ perspective: "2000px" }}>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-blush-500/10 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 text-center relative z-10 mb-16 md:mb-24">
@@ -2134,7 +2187,7 @@ function AppleScrollText() {
   const words = text.split(" ");
   
   return (
-    <section ref={container} className="py-32 md:py-48 bg-surface border-y border-blush-100/50 flex items-center justify-center px-6">
+    <section ref={container} className="py-20 md:py-28 bg-surface border-y border-blush-100/50 flex items-center justify-center px-6">
       <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-3 gap-y-1 md:gap-x-4 md:gap-y-2 text-center">
         {words.map((word, i) => {
           const start = i / words.length;
@@ -2704,6 +2757,7 @@ export default function Home() {
       >
         <Navbar />
         <Hero />
+        <SocialProofMarquee />
         <TrustStrip />
         <About />
         <AppleScrollText />

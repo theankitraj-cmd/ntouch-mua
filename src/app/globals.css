@@ -45,8 +45,8 @@
   --font-body: "Outfit", "Helvetica Neue", sans-serif;
 
   /* ─── Spacing Scale ─── */
-  --spacing-section: 7rem;
-  --spacing-section-sm: 4rem;
+  --spacing-section: 5rem;
+  --spacing-section-sm: 3rem;
 }
 
 /* ─── Base Reset & Scrolling ─── */
