@@ -26,7 +26,7 @@ export async function sendBookingEmails(data: BookingData) {
   try {
     // 1. Send Notification to Nancy (The MUA)
     const adminRes = await resend.emails.send({
-      from: "N.Touch Bookings <onboarding@resend.dev>", // Fallback for unverified domains
+      from: "N.Touch Bookings <bookings@ntouchmua.com>", // Authentic verified domain
       to: "nancymehta247@gmail.com",
       subject: `✨ New Booking: ${data.name} (${data.eventType})`,
       html: `
@@ -51,9 +51,8 @@ export async function sendBookingEmails(data: BookingData) {
 
   try {
     // 2. Send Luxury Confirmation to Customer
-    // NOTE: This will fail on Resend Free Tier unless the domain is verified.
     const clientRes = await resend.emails.send({
-      from: "N.Touch MUA <onboarding@resend.dev>",
+      from: "N.Touch MUA <bookings@ntouchmua.com>",
       to: data.email,
       subject: "Your Glam Journey Begins! ✨ | Nancy Mehta MUA",
       react: BookingConfirmationEmail({
