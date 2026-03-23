@@ -634,6 +634,45 @@ function Hero() {
         style={{ y: textY, opacity }}
         className="relative z-10 text-center px-4 max-w-5xl mx-auto"
       >
+        {/* Nancy's Photo — First thing visible */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.2, type: "spring", stiffness: 120 }}
+          className="relative mx-auto mb-8 w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52"
+        >
+          {/* Animated glow ring */}
+          <motion.div
+            className="absolute -inset-2 rounded-full"
+            animate={{
+              boxShadow: [
+                "0 0 20px rgba(212,175,55,0.2), 0 0 40px rgba(212,69,107,0.1)",
+                "0 0 40px rgba(212,175,55,0.4), 0 0 80px rgba(212,69,107,0.2)",
+                "0 0 20px rgba(212,175,55,0.2), 0 0 40px rgba(212,69,107,0.1)",
+              ],
+            }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <div className="relative w-full h-full rounded-full overflow-hidden border-[3px] border-gold-400/50 shadow-2xl">
+            <img
+              src="/nancy-mehta-hero-bridal.jpg"
+              alt="Nancy Mehta - Best Bridal Makeup Artist in Patna Bihar"
+              className="w-full h-full object-cover object-top"
+              width={400}
+              height={400}
+            />
+          </div>
+          {/* Small verified badge */}
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 1, type: "spring", stiffness: 200 }}
+            className="absolute -bottom-1 -right-1 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gold-400 flex items-center justify-center shadow-lg border-2 border-white/20"
+          >
+            <Award className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+          </motion.div>
+        </motion.div>
+
         {/* Decorative lines expanding from center */}
         <motion.div
           initial={{ scaleX: 0 }}
