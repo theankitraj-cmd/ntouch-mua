@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "N.Touch — Professional Makeup Artist in Patna | Nancy Mehta — Best Makeup Artist in Patna, Bihar",
+  title: "Nancy Mehta | Makeover By Nancy — Best Bridal Makeup Artist in Patna | N.Touch MUA",
   description:
-    "Nancy Mehta is Patna's top-rated Lakme Academy certified makeup artist. Specializing in bridal makeup, party glam, HD & airbrush makeup, editorial looks, and skincare. Serving Patna, Bihar and nearby cities. Book your luxury makeup transformation today.",
+    "Nancy Mehta (Makeover By Nancy) is Patna's top-rated Lakme Academy certified makeup artist. Specializing in luxury bridal makeup, party glam, HD & airbrush makeup. Book your transformation with Patna's favorite artist.",
   keywords: [
     "makeup artist Patna",
+    "Makeover By Nancy",
+    "Makeover By Nancy Patna",
     "best makeup artist in Patna",
     "bridal makeup Patna",
-    "bridal makeup artist Bihar",
-    "Patna makeup artist",
     "Nancy Mehta makeup artist",
-    "N.Touch — Professional Makeup Artist in Patna",
+    "N.Touch MUA",
     "Lakme certified makeup artist Patna",
     "Bihar wedding makeup",
     "party makeup Patna",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     "celebrity makeup artist Patna",
   ],
   openGraph: {
-    title: "N.Touch — Professional Makeup Artist in Patna | Nancy Mehta — Best Makeup Artist in Patna, Bihar",
+    title: "Nancy Mehta | Makeover By Nancy — Best Bridal Makeup Artist in Patna",
     description:
-      "Lakme Academy certified. Bridal, party, HD & airbrush makeup specialist in Patna, Bihar. As seen at Miss Universe 2025 & The Cover Girl Event. Book now!",
+      "Lakme Academy certified. Bridal, party, HD & airbrush makeup specialist in Patna, Bihar. Transformations by Nancy Mehta.",
     type: "website",
     locale: "en_IN",
     siteName: "N.Touch — Professional Makeup Artist in Patna",
@@ -87,14 +87,14 @@ const jsonLd = {
     {
       "@type": "BeautySalon",
       "@id": "https://ntouchmua.com/#business",
-      name: "N.Touch — Professional Makeup Artist in Patna — Nancy Mehta",
-      alternateName: "Best Bridal Makeup Artist for Weddings, Dulhan Makeup, and Nikah Looks in Patna - N.Touch — Professional Makeup Artist in Patna",
+      name: "Makeover By Nancy — Nancy Mehta (N.Touch MUA)",
+      alternateName: "Nancy Mehta | Makeover By Nancy",
       description:
-        "Nancy Mehta is the best bridal makeup artist in Patna, Bihar. Lakme Academy certified and specializing in luxury bridal makeup, HD makeup, airbrush makeup, and editorial looks. Top-rated wedding makeup artist in Patna.",
+        "Nancy Mehta (Makeover By Nancy) is the best bridal makeup artist in Patna, Bihar. Lakme Academy certified and specializing in luxury bridal makeup, HD makeup, and airbrush makeup.",
       url: "https://ntouchmua.com",
       telephone: "+918969184453",
       email: "nancymehta247@gmail.com",
-      image: "https://ntouchmua.com/nancy-mehta-hero-bridal.jpg",
+      image: "https://ntouchmua.com/nancy-mehta-makeup-artist-patna-bihar.jpg",
       priceRange: "₹₹-₹₹₹",
       address: {
         "@type": "PostalAddress",
@@ -141,11 +141,12 @@ const jsonLd = {
         "https://instagram.com/n.touchmua",
         "https://facebook.com/ntouchmua",
         "https://wa.me/918969184453",
+        "https://g.page/r/CU8ap08U8CLQEBM/review",
       ],
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: "5.0",
-        reviewCount: "100",
+        reviewCount: "148",
         bestRating: "5",
         worstRating: "1",
       },
@@ -247,7 +248,7 @@ const jsonLd = {
       description:
         "Lakme Academy certified makeup artist with 2 years of experience. Has worked at Miss Universe 2025 and The Cover Girl Event. Based in Patna, Bihar.",
       url: "https://ntouchmua.com",
-      image: "https://ntouchmua.com/nancy-mehta-hero-bridal.jpg",
+      image: "https://ntouchmua.com/nancy-mehta-makeup-artist-patna-bihar.jpg",
       telephone: "+918969184453",
       email: "nancymehta247@gmail.com",
       address: {
@@ -277,7 +278,7 @@ const jsonLd = {
       ],
       worksFor: {
         "@type": "BeautySalon",
-        name: "N.Touch — Professional Makeup Artist in Patna",
+        name: "Makeover By Nancy",
       },
       sameAs: [
         "https://instagram.com/n.touchmua",
@@ -288,7 +289,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://ntouchmua.com/#website",
       url: "https://ntouchmua.com",
-      name: "N.Touch — Professional Makeup Artist in Patna — Nancy Mehta",
+      name: "Makeover By Nancy — Best Bridal Makeup Artist in Patna",
       description: "Best Bridal Makeup Artist in Patna, Bihar",
       publisher: {
         "@id": "https://ntouchmua.com/#person",
@@ -334,7 +335,7 @@ const jsonLd = {
           name: "Who is the best makeup artist in Patna?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Nancy Mehta (N.Touch — Professional Makeup Artist in Patna) is one of the best makeup artists in Patna, Bihar. She is Lakme Academy certified and has experience working at prestigious events like Miss Universe 2025 and The Cover Girl Event.",
+            text: "Nancy Mehta (Makeover By Nancy) is one of the best makeup artists in Patna, Bihar. She is Lakme Academy certified and has experience working at prestigious events like Miss Universe 2025 and The Cover Girl Event.",
           },
         },
         {
@@ -342,7 +343,7 @@ const jsonLd = {
           name: "How much does bridal makeup cost in Patna?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Bridal makeup costs in Patna vary based on the package. N.Touch — Professional Makeup Artist in Patna offers premium bridal packages that include HD/Airbrush base, 3D eye makeup, hairstyling, saree draping, and complete skin prep. Contact Nancy Mehta at +91 89691 84453 for detailed pricing.",
+            text: "Bridal makeup costs in Patna vary based on the package. Makeover By Nancy offers premium bridal packages that include HD/Airbrush base, 3D eye makeup, hairstyling, saree draping, and complete skin prep. Contact Nancy Mehta at +91 89691 84453 for detailed pricing.",
           },
         },
         {
@@ -355,10 +356,10 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          name: "What types of makeup services does N.Touch — Professional Makeup Artist in Patna offer?",
+          name: "What types of makeup services does Makeover By Nancy offer?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "N.Touch — Professional Makeup Artist in Patna offers bridal makeup, party & reception makeup, HD & airbrush makeup, editorial & photoshoot makeup, engagement makeup, skincare & facials, saree draping, and traditional styling services in Patna, Bihar.",
+            text: "Makeover By Nancy offers bridal makeup, party & reception makeup, HD & airbrush makeup, editorial & photoshoot makeup, engagement makeup, skincare & facials, saree draping, and traditional styling services in Patna, Bihar.",
           },
         },
       ],

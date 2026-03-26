@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
     "@react-email/components": "^1.0.10",
@@ -15,8 +19,9 @@
     "framer-motion": "^12.38.0",
     "gray-matter": "^4.0.3",
     "groq-sdk": "^1.1.1",
+    "jose": "^6.2.2",
     "lucide-react": "^0.577.0",
-    "next": "16.2.1",
+    "next": "^14.2.16",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-intersection-observer": "^10.0.3",
@@ -24,17 +29,23 @@
     "remark-html": "^16.0.1",
     "resend": "^6.9.4",
     "slugify": "^1.6.8",
+    "smoothscroll-polyfill": "^0.4.4",
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
+    "@opennextjs/cloudflare": "^1.17.3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/smoothscroll-polyfill": "^0.3.4",
     "eslint": "^9",
-    "eslint-config-next": "16.2.1",
+    "eslint-config-next": "^14.2.16",
+    "prettier": "^3.8.1",
     "tailwindcss": "^4",
     "ts-node": "^10.9.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.77.0"
   }
 }

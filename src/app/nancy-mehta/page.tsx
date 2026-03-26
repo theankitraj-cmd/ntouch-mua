@@ -48,98 +48,191 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  mainEntity: {
-    "@type": "Person",
-    "@id": "https://ntouchmua.com/#person",
-    name: "Nancy Mehta",
-    alternateName: ["N.Touch — Professional Makeup Artist in Patna", "Nancy Mehta — Best Bridal Makeup Artist in Patna", "Nancy Mehta Makeup Artist"],
-    jobTitle: "Professional Makeup Artist",
-    description:
-      "Nancy Mehta, professionally known as N.Touch — Professional Makeup Artist in Patna, is a Lakme Academy certified makeup artist based in Patna, Bihar. She has 2+ years of professional experience and has worked at Miss Universe 2025 and The Cover Girl Event 2025.",
-    url: "https://ntouchmua.com/nancy-mehta",
-    image: "https://ntouchmua.com/nancy-mehta-makeup-artist-patna-bihar.jpg",
-    telephone: "+918969184453",
-    email: "nancymehta247@gmail.com",
-    birthPlace: { "@type": "Place", name: "Bihar, India" },
-    nationality: { "@type": "Country", name: "India" },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Patna",
-      addressRegion: "Bihar",
-      postalCode: "800001",
-      addressCountry: "IN",
-    },
-    alumniOf: {
-      "@type": "EducationalOrganization",
-      name: "Lakme Academy",
-      url: "https://lakmeacademy.co.in",
-    },
-    hasCredential: {
-      "@type": "EducationalOccupationalCredential",
-      credentialCategory: "Professional Certification",
-      name: "Lakme Academy Certification in Makeup Artistry & Skincare",
-      recognizedBy: {
-        "@type": "Organization",
+const jsonLd = [
+  // PRIMARY: Person Entity (Knowledge Panel source)
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    mainEntity: {
+      "@type": "Person",
+      "@id": "https://ntouchmua.com/#person",
+      name: "Nancy Mehta",
+      givenName: "Nancy",
+      familyName: "Mehta",
+      alternateName: ["Makeover By Nancy", "N.Touch MUA", "Nancy Mehta Makeup Artist", "Nancy Mehta Patna"],
+      gender: "Female",
+      birthDate: "2003-09-16",
+      birthPlace: {
+        "@type": "Place",
+        name: "Patna, Bihar, India",
+        address: { "@type": "PostalAddress", addressLocality: "Patna", addressRegion: "Bihar", addressCountry: "IN" }
+      },
+      nationality: { "@type": "Country", name: "India" },
+      jobTitle: "Professional Makeup Artist & Skincare Specialist",
+      description: "Nancy Mehta (born 16 September 2003) is an Indian professional makeup artist and skincare specialist based in Patna, Bihar. She is the founder of Makeover By Nancy. Trained and certified by the prestigious Lakme Academy, she has gained national recognition through her work at Miss Universe 2025 and The Cover Girl Event 2025. She specializes in bridal, HD, airbrush, and editorial makeup and has served over 100 happy clients across Bihar and Jharkhand.",
+      url: "https://ntouchmua.com/nancy-mehta",
+      image: {
+        "@type": "ImageObject",
+        "@id": "https://ntouchmua.com/#primaryimage",
+        url: "https://ntouchmua.com/nancy-mehta-makeup-artist-patna-bihar.jpg",
+        contentUrl: "https://ntouchmua.com/nancy-mehta-makeup-artist-patna-bihar.jpg",
+        caption: "Nancy Mehta — Professional Makeup Artist in Patna, Bihar",
+        name: "Nancy Mehta",
+        description: "Official portrait of Nancy Mehta, founder of Makeover By Nancy, best bridal makeup artist in Patna",
+        width: 600,
+        height: 800,
+        representativeOfPage: true,
+      },
+      telephone: "+918969184453",
+      email: "nancymehta247@gmail.com",
+      knowsLanguage: ["Hindi", "English", "Bhojpuri"],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Patna",
+        addressLocality: "Patna",
+        addressRegion: "Bihar",
+        postalCode: "800001",
+        addressCountry: "IN",
+      },
+      alumniOf: {
+        "@type": "EducationalOrganization",
         name: "Lakme Academy",
+        url: "https://lakmeacademy.co.in",
       },
-    },
-    hasOccupation: {
-      "@type": "Occupation",
-      name: "Makeup Artist",
-      occupationLocation: {
-        "@type": "City",
-        name: "Patna",
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "Professional Certification",
+          name: "Lakme Academy Certification in Makeup Artistry & Skincare",
+          recognizedBy: { "@type": "Organization", name: "Lakme Academy" },
+          dateCreated: "2025",
+        }
+      ],
+      hasOccupation: {
+        "@type": "Occupation",
+        name: "Makeup Artist",
+        occupationLocation: { "@type": "City", name: "Patna" },
+        skills: "Bridal Makeup, HD Makeup, Airbrush Makeup, Editorial Makeup, Skincare, Saree Draping, Party Makeup, Stage Makeup",
       },
-      skills: "Bridal Makeup, HD Makeup, Airbrush Makeup, Editorial Makeup, Skincare, Saree Draping, Party Makeup, Stage Makeup",
+      knowsAbout: [
+        "Bridal Makeup", "HD Makeup", "Airbrush Makeup", "Editorial Makeup",
+        "Skincare & Facials", "Saree Draping", "Party & Reception Makeup",
+        "Stage & Event Makeup", "Traditional Indian Makeup", "Camera-Ready Makeup",
+        "NARS Cosmetics", "Huda Beauty", "MAC Cosmetics", "Charlotte Tilbury",
+      ],
+      award: [
+        "Lakme Academy Certified Makeup Artist & Skincare Specialist (2025)",
+        "Makeup Artist — Miss Universe 2025 Pageant",
+        "Makeup Artist — The Cover Girl Event 2025",
+      ],
+      founder: {
+        "@type": "BeautySalon",
+        name: "Makeover By Nancy",
+        url: "https://ntouchmua.com",
+        foundingDate: "2024",
+        areaServed: [
+          { "@type": "City", name: "Patna" },
+          { "@type": "State", name: "Bihar" },
+          { "@type": "State", name: "Jharkhand" },
+        ],
+      },
+      worksFor: {
+        "@type": "BeautySalon",
+        name: "Makeover By Nancy",
+        url: "https://ntouchmua.com",
+      },
+      sameAs: [
+        "https://ntouchmua.com",
+        "https://instagram.com/n.touchmua",
+        "https://facebook.com/ntouchmua",
+        "https://wa.me/918969184453",
+        "https://g.page/r/CU8ap08U8CLQEBM",
+      ],
     },
-    knowsAbout: [
-      "Bridal Makeup",
-      "HD Makeup",
-      "Airbrush Makeup",
-      "Editorial Makeup",
-      "Skincare & Facials",
-      "Saree Draping",
-      "Party & Reception Makeup",
-      "Stage & Event Makeup",
-      "Traditional Indian Makeup",
-      "Camera-Ready Makeup",
-    ],
-    award: [
-      "Lakme Academy Certified Makeup Artist & Skincare Specialist (2025)",
-      "Makeup Helper — Miss Universe 2025 Pageant",
-      "Makeup Helper — The Cover Girl Event 2025",
-    ],
-    memberOf: {
-      "@type": "Organization",
-      name: "N.Touch — Professional Makeup Artist in Patna",
-      url: "https://ntouchmua.com",
-    },
-    worksFor: {
-      "@type": "BeautySalon",
-      name: "N.Touch — Professional Makeup Artist in Patna",
-      url: "https://ntouchmua.com",
-    },
-    sameAs: [
-      "https://ntouchmua.com",
-      "https://instagram.com/n.touchmua",
-      "https://facebook.com/ntouchmua",
-      "https://wa.me/918969184453",
+    dateCreated: "2025-01-01",
+    dateModified: new Date().toISOString().split("T")[0],
+  },
+  // SECONDARY: ItemList of Notable Works / Events
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Nancy Mehta — Career Highlights",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@type": "Event",
+          name: "Miss Universe 2025 — Backstage Makeup Team",
+          description: "Nancy Mehta worked as a professional makeup artist during the Miss Universe 2025 pageant.",
+          startDate: "2025",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@type": "Event",
+          name: "The Cover Girl Event 2025",
+          description: "Nancy delivered camera-perfect artistry under high-pressure conditions at The Cover Girl Event.",
+          startDate: "2025",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        item: {
+          "@type": "EducationalOccupationalCredential",
+          name: "Lakme Academy Certification",
+          credentialCategory: "Makeup Artistry & Skincare",
+          dateCreated: "2025",
+        },
+      },
     ],
   },
-  dateCreated: "2025-01-01",
-  dateModified: new Date().toISOString().split("T")[0],
-};
+  // THIRD: FAQ Schema (Rich Snippets)
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        "name": "Who is Nancy Mehta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nancy Mehta is a Lakme Academy certified professional makeup artist and skincare specialist based in Patna, Bihar, known for her work at Miss Universe 2025."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Nancy Mehta Lakme Academy certified?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Nancy Mehta is a formally certified makeup artist and skincare specialist from Lakme Academy (2025)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What services does Nancy Mehta provide in Patna?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nancy Mehta provides Bridal Makeup, HD & Airbrush Makeup, Party Makeup, Saree Draping, and professional skincare treatments across Patna and Bihar."
+        }
+      }
+    ]
+  }
+];
 
 export default function NancyMehtaPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {jsonLd.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
 
       <main className="min-h-screen bg-[#FFF8F8]">
         {/* Hero */}
@@ -155,13 +248,18 @@ export default function NancyMehtaPage() {
           </div>
           <div className="max-w-5xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-10 relative z-10">
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl flex-shrink-0">
-              <img
-                src="/nancy-mehta-makeup-artist-patna-bihar.jpg"
-                alt="Nancy Mehta - Best Makeup Artist in Patna Bihar"
-                className="w-full h-full object-cover"
-                width={600}
-                height={800}
-              />
+              <figure className="w-full h-full m-0 p-0">
+                <img
+                  src="/nancy-mehta-makeup-artist-patna-bihar.jpg"
+                  alt="Nancy Mehta - Best Makeup Artist in Patna Bihar"
+                  title="Nancy Mehta"
+                  className="w-full h-full object-cover"
+                  width={600}
+                  height={800}
+                  fetchPriority="high"
+                />
+                <figcaption className="sr-only">Who is Nancy Mehta? Nancy Mehta is a Professional Makeup Artist based in Patna, Bihar.</figcaption>
+              </figure>
             </div>
             <div className="text-center md:text-left">
               <p className="text-xs md:text-sm tracking-[0.25em] uppercase text-white/60 mb-3">
@@ -183,6 +281,34 @@ export default function NancyMehtaPage() {
                 <span className="px-4 py-1.5 rounded-full border border-white/20 text-xs text-white/60 tracking-wider uppercase">
                   100+ Happy Brides
                 </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Wikipedia-Style Quick Facts Panel */}
+        <section className="bg-white border-b border-[#eee]">
+          <div className="max-w-3xl mx-auto px-6 md:px-8 py-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div>
+                <p className="text-xs uppercase tracking-[0.15em] text-[#888] mb-1" style={{ fontFamily: "'Outfit', sans-serif" }}>Born</p>
+                <p className="text-lg font-semibold text-[#2E131E]" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>16 September 2003</p>
+                <p className="text-xs text-[#888]" style={{ fontFamily: "'Outfit', sans-serif" }}>Age {new Date().getFullYear() - 2003} years</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.15em] text-[#888] mb-1" style={{ fontFamily: "'Outfit', sans-serif" }}>Birthplace</p>
+                <p className="text-lg font-semibold text-[#2E131E]" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>Patna, Bihar</p>
+                <p className="text-xs text-[#888]" style={{ fontFamily: "'Outfit', sans-serif" }}>India 🇮🇳</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.15em] text-[#888] mb-1" style={{ fontFamily: "'Outfit', sans-serif" }}>Profession</p>
+                <p className="text-lg font-semibold text-[#2E131E]" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>Makeup Artist</p>
+                <p className="text-xs text-[#888]" style={{ fontFamily: "'Outfit', sans-serif" }}>Skincare Specialist</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.15em] text-[#888] mb-1" style={{ fontFamily: "'Outfit', sans-serif" }}>Known For</p>
+                <p className="text-lg font-semibold text-[#2E131E]" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>Bridal Makeup</p>
+                <p className="text-xs text-[#888]" style={{ fontFamily: "'Outfit', sans-serif" }}>HD & Airbrush Expert</p>
               </div>
             </div>
           </div>
@@ -242,6 +368,60 @@ export default function NancyMehtaPage() {
                   <li><strong>Punctual & Professional</strong> — Known for strict time management and seamless on-site execution.</li>
                   <li><strong>Personalized Approach</strong> — Every look is customized to enhance each client&apos;s unique beauty and personality.</li>
                 </ul>
+
+                <h3 className="text-xl font-medium mt-8 mb-4" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", color: "#2E131E" }}>
+                  Notable Career Timeline
+                </h3>
+                <div className="space-y-4 mb-8">
+                  <div className="flex gap-4 border-l-2 border-[#D4456B]/20 pl-4 py-1">
+                    <span className="text-[#D4456B] font-bold" style={{ minWidth: "40px" }}>2025</span>
+                    <div>
+                      <p className="font-semibold text-[#2E131E]">Miss Universe 2025</p>
+                      <p className="text-sm text-[#888]">Professional Makeup Helper for the prestigious national pageant.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 border-l-2 border-[#D4456B]/20 pl-4 py-1">
+                    <span className="text-[#D4456B] font-bold" style={{ minWidth: "40px" }}>2025</span>
+                    <div>
+                      <p className="font-semibold text-[#2E131E]">The Cover Girl Event</p>
+                      <p className="text-sm text-[#888]">Delivered high-fashion editorial makeup for celebrity-level photoshoots.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 border-l-2 border-[#D4456B]/20 pl-4 py-1">
+                    <span className="text-[#D4456B] font-bold" style={{ minWidth: "40px" }}>2025</span>
+                    <div>
+                      <p className="font-semibold text-[#2E131E]">Lakme Academy Certification</p>
+                      <p className="text-sm text-[#888]">Formally certified in Professional Makeup Artistry & Skincare.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 border-l-2 border-[#D4456B]/20 pl-4 py-1">
+                    <span className="text-[#D4456B] font-bold" style={{ minWidth: "40px" }}>2024</span>
+                    <div>
+                      <p className="font-semibold text-[#2E131E]">Foundation of Makeover By Nancy</p>
+                      <p className="text-sm text-[#888]">Started her professional journey, serving brides across Bihar.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-medium mt-8 mb-4" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", color: "#2E131E" }}>
+                  Signature Artistry Portfolio
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                  <Link href="/portfolio/bridal-makeup" className="group relative aspect-[4/3] rounded-lg overflow-hidden bg-[#eee]">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+                    <div className="absolute bottom-4 left-4 z-20">
+                      <p className="text-white font-semibold">Bridal Artistry</p>
+                      <p className="text-white/70 text-xs">Signature Wedding Looks</p>
+                    </div>
+                  </Link>
+                  <Link href="/portfolio/party-makeup" className="group relative aspect-[4/3] rounded-lg overflow-hidden bg-[#eee]">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+                    <div className="absolute bottom-4 left-4 z-20">
+                      <p className="text-white font-semibold">Party Glamour</p>
+                      <p className="text-white/70 text-xs">Engagement & Reception</p>
+                    </div>
+                  </Link>
+                </div>
 
                 <h3 className="text-xl font-medium mt-8 mb-4" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", color: "#2E131E" }}>
                   Contact Nancy Mehta

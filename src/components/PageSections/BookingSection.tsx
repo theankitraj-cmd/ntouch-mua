@@ -96,7 +96,7 @@ export function BookingSection() {
                      <h3 className="font-display text-5xl md:text-6xl text-plum mb-6">Ready for your magic?</h3>
                      <p className="font-body text-xl text-plum-soft mb-12">I'll ask a few quick questions to personalize your experience.</p>
                      <button onClick={nextStep} className="px-10 py-4 bg-blush-500 hover:bg-blush-600 text-white rounded-full font-body tracking-widest text-sm uppercase cursor-pointer transition-colors shadow-xl">
-                       Let's Begin
+                       Let&apos;s Begin
                      </button>
                    </motion.div>
                  )}
@@ -158,7 +158,7 @@ export function BookingSection() {
                  {step === 6 && (
                    <motion.div key="step6" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -50 }} className="w-full">
                      <h3 className="font-display text-3xl md:text-4xl text-plum mb-6">Tell us about your dream look.</h3>
-                     <textarea autoFocus rows={3} value={formState.message} onChange={(e) => setFormState({...formState, message: e.target.value})} className="w-full text-xl md:text-2xl font-light text-plum bg-white/50 border-2 border-blush-200 focus:border-blush-500 outline-none p-6 rounded-3xl resize-none placeholder:text-plum/30 mb-8 shadow-inner" placeholder="I'm wearing a red Sabyasachi lehenga..." />
+                     <textarea autoFocus rows={3} value={formState.message} onChange={(e) => setFormState({...formState, message: e.target.value})} className="w-full text-xl md:text-2xl font-light text-plum bg-white/50 border-2 border-blush-200 focus:border-blush-500 outline-none p-6 rounded-3xl resize-none placeholder:text-plum/30 mb-8 shadow-inner" placeholder="I&apos;m wearing a red Sabyasachi lehenga..." />
                      <div className="relative w-full sm:w-64 max-w-full">
                         {!submitted ? (
                           <motion.button

@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Sparkles, Star, Calendar, ArrowRight, Award, Heart } from "lucide-react";
+import { GooeyText } from "@/components/ui/gooey-text-morphing";
 
 /* ═══════════════════════════════════════════════════════
    FLOATING MAKEUP SVG ILLUSTRATIONS
@@ -287,45 +289,52 @@ export function HeroSection() {
           filter: "blur(40px)",
         }}
       />
+      {/* Backdrop Content */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none flex items-center justify-center opacity-[0.03] select-none">
+        <GooeyText 
+          texts={["ELEGANCE", "ARTISTRY", "PERFECTION", "LUXURY"]}
+          className="scale-[2] md:scale-[4]"
+          textClassName="font-display text-plum uppercase"
+        />
+      </div>
 
       {[1, 2, 3].map((ring) => (
         <div
           key={ring}
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border pointer-events-none z-[3] perf-gpu"
           style={{
-            width: `${ring * 220 + 100}px`,
-            height: `${ring * 220 + 100}px`,
-            borderColor: `rgba(201, 169, 110, ${0.08 / ring})`,
+            width: `${ring * 220 + 200}px`,
+            height: `${ring * 220 + 200}px`,
+            borderColor: `rgba(201, 169, 110, ${0.12 / ring})`,
             animation: `pulse-glow ${4 + ring}s ease-in-out ${ring * 0.5}s infinite`,
           }}
         />
       ))}
 
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] pointer-events-none z-[4] perf-gpu">
-        <div className="w-full h-full" style={{ animation: "spin 30s linear infinite" }}>
-          {[0, 60, 120, 180, 240, 300].map((angle, i) => (
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[650px] md:h-[650px] pointer-events-none z-[4] perf-gpu">
+        <div className="w-full h-full" style={{ animation: "spin 45s linear infinite" }}>
+          {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((angle, i) => (
             <div
               key={i}
               className="absolute"
               style={{
                 left: "50%",
                 top: "50%",
-                transform: `rotate(${angle}deg) translateX(175px)`,
+                transform: `rotate(${angle}deg) translateX(${typeof window !== 'undefined' && window.innerWidth < 768 ? 160 : 300}px)`,
               }}
             >
               <div
                 className="rounded-full"
                 style={{
-                  width: i % 2 === 0 ? 6 : 4,
-                  height: i % 2 === 0 ? 6 : 4,
-                  background: i % 2 === 0 ? "#D4AF37" : "#FFB0CA",
-                  opacity: 0.6,
-                  boxShadow: i % 2 === 0 ? "0 0 8px #D4AF37" : "0 0 6px #FFB0CA",
+                  width: i % 3 === 0 ? 8 : 4,
+                  height: i % 3 === 0 ? 8 : 4,
+                  background: i % 3 === 0 ? "#D4AF37" : "rgba(255,176,202,0.4)",
+                  opacity: 0.4,
+                  boxShadow: i % 3 === 0 ? "0 0 12px #D4AF37" : "none",
                 }}
               />
             </div>
           ))}
-          <div className="absolute inset-0 rounded-full border border-dashed" style={{ borderColor: "rgba(201,169,110,0.06)" }} />
         </div>
       </div>
 
@@ -333,8 +342,8 @@ export function HeroSection() {
         <SparkleParticle key={i} x={s.x} y={s.y} delay={s.delay} />
       ))}
 
-      <div className="absolute top-[5%] left-[2%] w-28 md:w-44 h-28 md:h-44 rounded-full bg-blush-400/15 pointer-events-none perf-gpu" style={{ animation: "float 12s ease-in-out infinite" }} />
-      <div className="absolute bottom-[10%] right-[4%] w-36 md:w-52 h-36 md:h-52 rounded-full bg-blush-500/10 pointer-events-none perf-gpu" style={{ animation: "float 15s ease-in-out infinite reverse" }} />
+      <div className="absolute top-[5%] left-[2%] w-28 md:w-64 h-28 md:h-64 rounded-full bg-blush-400/10 pointer-events-none perf-gpu blur-3xl" style={{ animation: "float 18s ease-in-out infinite" }} />
+      <div className="absolute bottom-[10%] right-[4%] w-36 md:w-80 h-36 md:h-80 rounded-full bg-gold-400/5 pointer-events-none perf-gpu blur-3xl" style={{ animation: "float 22s ease-in-out infinite reverse" }} />
 
       {floatingItems.map((item, i) => (
         <div
@@ -343,44 +352,117 @@ export function HeroSection() {
           className="absolute z-[5] pointer-events-none perf-gpu"
           style={{ ...item.style, animation: `float ${item.style.animationDuration} ${item.style.animationDelay} ease-in-out infinite` }}
         >
-          <item.Component className={`${item.className} opacity-40 drop-shadow-2xl`} />
+          <item.Component className={`${item.className} opacity-30 drop-shadow-2xl grayscale-[0.2]`} />
         </div>
       ))}
 
-      <motion.div style={{ y: textY, opacity }} className="relative z-10 text-center px-4 max-w-5xl">
-        <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} className="mb-6 inline-flex flex-col items-center">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="h-[1px] w-8 md:w-12 bg-gold-400" />
-            <span className="font-body text-[10px] md:text-xs font-semibold tracking-[0.4em] uppercase text-gold-400">Patna's Finest Artist</span>
-            <div className="h-[1px] w-8 md:w-12 bg-gold-400" />
+      <motion.div style={{ y: textY, opacity }} className="relative z-10 text-center px-4 max-w-7xl">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.5, y: 30 }} 
+          animate={{ opacity: 1, scale: 1, y: 0 }} 
+          transition={{ duration: 1.2, delay: 0.2, type: "spring", stiffness: 120 }} 
+          className="relative mx-auto mb-10 w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56"
+        >
+          {/* Animated glow ring */}
+          <motion.div 
+            className="absolute -inset-4 rounded-full" 
+            animate={{ 
+              boxShadow: [ 
+                "0 0 20px rgba(212,175,55,0.2), 0 0 40px rgba(212,69,107,0.1)", 
+                "0 0 40px rgba(212,175,55,0.4), 0 0 80px rgba(212,69,107,0.2)", 
+                "0 0 20px rgba(212,175,55,0.2), 0 0 40px rgba(212,69,107,0.1)", 
+              ], 
+            }} 
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} 
+          />
+          <div className="relative w-full h-full rounded-full overflow-hidden border-[3px] border-gold-400/50 shadow-2xl perf-gpu">
+            <Image 
+              src="/nancy-mehta-hero-bridal.jpg" 
+              alt="Nancy Mehta - Best Bridal Makeup Artist in Patna Bihar" 
+              fill
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover object-top img-optimize" 
+            />
           </div>
-          <div className="flex gap-1">
+          {/* Small verified badge */}
+          <motion.div 
+            initial={{ scale: 0 }} 
+            animate={{ scale: 1 }} 
+            transition={{ delay: 1, type: "spring", stiffness: 200 }} 
+            className="absolute -bottom-1 -right-1 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gold-400 flex items-center justify-center shadow-lg border-2 border-white/20"
+          >
+            <Award className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+          </motion.div>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} 
+          className="mb-8 inline-flex flex-col items-center"
+        >
+          <div className="flex items-center gap-4 mb-3">
+            <div className="h-[1px] w-12 md:w-20 bg-gradient-to-r from-transparent to-gold-400" />
+            <span className="font-body text-[10px] md:text-xs font-semibold tracking-[0.6em] uppercase text-gold-500">Master Artistry Since 2022</span>
+            <div className="h-[1px] w-12 md:w-20 bg-gradient-to-l from-transparent to-gold-400" />
+          </div>
+          <div className="flex gap-2">
             {[1, 2, 3, 4, 5].map((s) => (
-              <Star key={s} className="w-3 h-3 text-gold-400 fill-gold-400" />
+              <Star key={s} className="w-3.5 h-3.5 text-gold-400 fill-gold-400/30" />
             ))}
           </div>
         </motion.div>
 
-        <h1 className="flex flex-col items-center mb-8">
-          <span className="block font-body text-xs md:text-sm font-light tracking-[0.8em] uppercase text-plum/60 mb-4 overflow-hidden">
-            <motion.span initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="block">High-End Bridal Specialist</motion.span>
-          </span>
-          <div className="relative inline-block py-2">
-            <div className="flex font-display text-7xl md:text-9xl lg:text-[11rem] leading-[0.85] text-plum tracking-tighter hero-name-shimmer select-none no-select">
-              {letters.map((letter, i) => (
-                <motion.span key={i} initial={{ opacity: 0, y: 50, rotateX: -90 }} animate={{ opacity: 1, y: 0, rotateX: 0 }} transition={{ duration: 1, delay: 0.3 + (i * 0.05), ease: [0.215, 0.61, 0.355, 1] }} className="inline-block origin-bottom transform-gpu">
-                  {letter === " " ? "\u00A0" : letter}
+        <div className="relative mb-12">
+          <div className="flex flex-col items-center select-none no-select">
+            <div className="flex font-display text-8xl md:text-[14rem] lg:text-[18rem] leading-[0.75] text-plum tracking-tighter transform-gpu italic-shimmer">
+              {["N", "A", "N", "C", "Y"].map((letter, i) => (
+                <motion.span 
+                  key={i} 
+                  initial={{ opacity: 0, y: 100, rotateX: -90, scale: 0.8 }} 
+                  animate={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }} 
+                  transition={{ duration: 1.2, delay: 0.4 + (i * 0.1), ease: [0.16, 1, 0.3, 1] }} 
+                  className="inline-block origin-bottom perspective-1000"
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </div>
+            <div className="flex font-display text-8xl md:text-[14rem] lg:text-[18rem] leading-[0.75] italic text-gold-400/90 tracking-tighter -mt-4 md:-mt-10 transform-gpu italic-shimmer">
+              {["M", "E", "H", "T", "A"].map((letter, i) => (
+                <motion.span 
+                  key={i} 
+                  initial={{ opacity: 0, y: 100, rotateX: -90, scale: 0.8 }} 
+                  animate={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }} 
+                  transition={{ duration: 1.2, delay: 0.8 + (i * 0.1), ease: [0.16, 1, 0.3, 1] }} 
+                  className="inline-block origin-bottom perspective-1000"
+                >
+                  {letter}
                 </motion.span>
               ))}
             </div>
           </div>
-        </h1>
+          
+          <motion.div 
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 1.5, delay: 1.8 }}
+            className="h-[2px] w-full max-w-sm mx-auto bg-gradient-to-r from-transparent via-gold-400/40 to-transparent mt-6 md:mt-10"
+          />
+        </div>
 
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5, delay: 1.2 }} className="font-body text-base md:text-xl text-plum/70 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-          Defining luxury for the modern Bihar bride. Elevating your natural beauty through <span className="text-plum font-medium italic">Timeless Artistry</span> and clinical perfection.
+        <motion.p 
+          initial={{ opacity: 0, y: 10 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 1, delay: 2 }} 
+          className="font-body text-lg md:text-2xl text-plum/60 max-w-3xl mx-auto mb-16 leading-relaxed font-light tracking-wide"
+        >
+          Redefining luxury bridal transformations for the modern <span className="text-plum font-semibold">Indian Bride</span>. Crafting timeless elegance with a high-definition cinematic touch.
         </motion.p>
         
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.5 }} className="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 2.2 }} className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <a href="#booking" className="group relative px-10 py-5 bg-plum text-white rounded-full overflow-hidden transition-all hover:pr-14 hover:shadow-2xl hover:shadow-plum/20">
             <span className="relative z-10 font-body text-sm font-semibold tracking-widest uppercase">Reserve Your Date</span>
             <div className="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300">
